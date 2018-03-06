@@ -33,13 +33,14 @@
             this.exitButton = new System.Windows.Forms.Button();
             this.dateButton = new System.Windows.Forms.Button();
             this.switchButton = new System.Windows.Forms.Button();
+            this.manageButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // createButton
             // 
-            this.createButton.Location = new System.Drawing.Point(158, 48);
+            this.createButton.Location = new System.Drawing.Point(244, 70);
             this.createButton.Name = "createButton";
-            this.createButton.Size = new System.Drawing.Size(105, 23);
+            this.createButton.Size = new System.Drawing.Size(117, 23);
             this.createButton.TabIndex = 0;
             this.createButton.Text = "Create Calendar";
             this.createButton.UseVisualStyleBackColor = true;
@@ -47,9 +48,9 @@
             // 
             // userButton
             // 
-            this.userButton.Location = new System.Drawing.Point(158, 103);
+            this.userButton.Location = new System.Drawing.Point(98, 70);
             this.userButton.Name = "userButton";
-            this.userButton.Size = new System.Drawing.Size(105, 23);
+            this.userButton.Size = new System.Drawing.Size(115, 23);
             this.userButton.TabIndex = 1;
             this.userButton.Text = "View by Employee";
             this.userButton.UseVisualStyleBackColor = true;
@@ -57,9 +58,9 @@
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(158, 241);
+            this.exitButton.Location = new System.Drawing.Point(244, 167);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(105, 23);
+            this.exitButton.Size = new System.Drawing.Size(117, 23);
             this.exitButton.TabIndex = 2;
             this.exitButton.Text = "E&xit";
             this.exitButton.UseVisualStyleBackColor = true;
@@ -67,9 +68,9 @@
             // 
             // dateButton
             // 
-            this.dateButton.Location = new System.Drawing.Point(158, 153);
+            this.dateButton.Location = new System.Drawing.Point(98, 120);
             this.dateButton.Name = "dateButton";
-            this.dateButton.Size = new System.Drawing.Size(105, 23);
+            this.dateButton.Size = new System.Drawing.Size(115, 23);
             this.dateButton.TabIndex = 3;
             this.dateButton.Text = "View by Date";
             this.dateButton.UseVisualStyleBackColor = true;
@@ -77,19 +78,30 @@
             // 
             // switchButton
             // 
-            this.switchButton.Location = new System.Drawing.Point(158, 200);
+            this.switchButton.Location = new System.Drawing.Point(98, 167);
             this.switchButton.Name = "switchButton";
-            this.switchButton.Size = new System.Drawing.Size(105, 23);
+            this.switchButton.Size = new System.Drawing.Size(115, 23);
             this.switchButton.TabIndex = 4;
             this.switchButton.Text = "Switch";
             this.switchButton.UseVisualStyleBackColor = true;
             this.switchButton.Click += new System.EventHandler(this.switchButton_Click);
             // 
+            // manageButton
+            // 
+            this.manageButton.Location = new System.Drawing.Point(244, 119);
+            this.manageButton.Name = "manageButton";
+            this.manageButton.Size = new System.Drawing.Size(117, 23);
+            this.manageButton.TabIndex = 5;
+            this.manageButton.Text = "Manage Employees";
+            this.manageButton.UseVisualStyleBackColor = true;
+            this.manageButton.Click += new System.EventHandler(this.manageButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(421, 314);
+            this.ClientSize = new System.Drawing.Size(448, 259);
+            this.Controls.Add(this.manageButton);
             this.Controls.Add(this.switchButton);
             this.Controls.Add(this.dateButton);
             this.Controls.Add(this.exitButton);
@@ -108,6 +120,7 @@
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button dateButton;
         private System.Windows.Forms.Button switchButton;
+        private System.Windows.Forms.Button manageButton;
     }
 }
 

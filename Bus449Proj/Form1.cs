@@ -54,5 +54,13 @@ namespace Bus449Proj
             form1.FormClosed += (s, args) => this.Close();
             form1.Show();
         }
+
+        private void manageButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var form1 = new Form6();
+            form1.FormClosed += (s, args) => this.Close();
+            form1.Show();
+        }
     }
 }

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Bus449Proj
 {
-    public partial class Form5 : Form
+    public partial class Form6 : Form
     {
-        public Form5()
+        public Form6()
         {
             InitializeComponent();
-        }
-
-        private void exitButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void mainButton_Click(object sender, EventArgs e)
@@ -30,5 +25,9 @@ namespace Bus449Proj
             form1.Show();
         }
 
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
