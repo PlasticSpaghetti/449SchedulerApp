@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="_449_dbDataSet" targetNamespace="http://tempuri.org/_449_dbDataSet.xsd" xmlns:mstns="http://tempuri.org/_449_dbDataSet.xsd" xmlns="http://tempuri.org/_449_dbDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="_449_dbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="_449_dbConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Bus449Proj.Properties.Settings.GlobalReference.Default._449_dbConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AM_EmployeesTableAdapter" GeneratorDataComponentClassName="AM_EmployeesTableAdapter" Name="AM_Employees" UserDataComponentName="AM_EmployeesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="_449_dbConnectionString (Settings)" DbObjectName="`449_db`.AM_Employees" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT AM_Employee_ID, First_Name, Last_Name, Phone_Number, Email FROM AM_Employees</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Data_InformationTableAdapter" GeneratorDataComponentClassName="Data_InformationTableAdapter" Name="Data_Information" UserDataComponentName="Data_InformationTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="_449_dbConnectionString (Settings)" DbObjectName="`449_db`.Data_Information" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Date_ID, Day_ID, Month_ID, Year_ID, AM_ID, PM_ID, Not_Holdiay, Is_Holiday FROM Data_Information</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PM_EmployeesTableAdapter" GeneratorDataComponentClassName="PM_EmployeesTableAdapter" Name="PM_Employees" UserDataComponentName="PM_EmployeesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="_449_dbConnectionString (Settings)" DbObjectName="`449_db`.PM_Employees" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT PM_Employee_ID, First_Name, Last_Name, Phone_Number, Email FROM PM_Employees</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="_449_dbDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="_449_dbDataSet" msprop:Generator_UserDSName="_449_dbDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="AM_Employees" msprop:Generator_TableClassName="AM_EmployeesDataTable" msprop:Generator_TableVarName="tableAM_Employees" msprop:Generator_TablePropName="AM_Employees" msprop:Generator_RowDeletingName="AM_EmployeesRowDeleting" msprop:Generator_RowChangingName="AM_EmployeesRowChanging" msprop:Generator_RowEvHandlerName="AM_EmployeesRowChangeEventHandler" msprop:Generator_RowDeletedName="AM_EmployeesRowDeleted" msprop:Generator_UserTableName="AM_Employees" msprop:Generator_RowChangedName="AM_EmployeesRowChanged" msprop:Generator_RowEvArgName="AM_EmployeesRowChangeEvent" msprop:Generator_RowClassName="AM_EmployeesRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Data_Information" msprop:Generator_TableClassName="Data_InformationDataTable" msprop:Generator_TableVarName="tableData_Information" msprop:Generator_TablePropName="Data_Information" msprop:Generator_RowDeletingName="Data_InformationRowDeleting" msprop:Generator_RowChangingName="Data_InformationRowChanging" msprop:Generator_RowEvHandlerName="Data_InformationRowChangeEventHandler" msprop:Generator_RowDeletedName="Data_InformationRowDeleted" msprop:Generator_UserTableName="Data_Information" msprop:Generator_RowChangedName="Data_InformationRowChanged" msprop:Generator_RowEvArgName="Data_InformationRowChangeEvent" msprop:Generator_RowClassName="Data_InformationRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PM_Employees" msprop:Generator_TableClassName="PM_EmployeesDataTable" msprop:Generator_TableVarName="tablePM_Employees" msprop:Generator_TablePropName="PM_Employees" msprop:Generator_RowDeletingName="PM_EmployeesRowDeleting" msprop:Generator_RowChangingName="PM_EmployeesRowChanging" msprop:Generator_RowEvHandlerName="PM_EmployeesRowChangeEventHandler" msprop:Generator_RowDeletedName="PM_EmployeesRowDeleted" msprop:Generator_UserTableName="PM_Employees" msprop:Generator_RowChangedName="PM_EmployeesRowChanged" msprop:Generator_RowEvArgName="PM_EmployeesRowChangeEvent" msprop:Generator_RowClassName="PM_EmployeesRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
