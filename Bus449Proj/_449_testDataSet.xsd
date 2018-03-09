@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="_449_testDataSet" targetNamespace="http://tempuri.org/_449_testDataSet.xsd" xmlns:mstns="http://tempuri.org/_449_testDataSet.xsd" xmlns="http://tempuri.org/_449_testDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="_449_testConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="_449_testConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Bus449Proj.Properties.Settings.GlobalReference.Default._449_testConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CalendarTableAdapter" GeneratorDataComponentClassName="CalendarTableAdapter" Name="Calendar" UserDataComponentName="CalendarTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="_449_testConnectionString (Settings)" DbObjectName="`449_test`.Calendar" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `Date_ID`, `empid_am`, `empid_pm`, `holiday`, `holiday_desc` FROM `Calendar`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EmployeeTableAdapter" GeneratorDataComponentClassName="EmployeeTableAdapter" Name="Employee" UserDataComponentName="EmployeeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="_449_testConnectionString (Settings)" DbObjectName="`449_test`.Employee" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `ID`, `F_Name`, `L_Name`, `Email`, `Phone`, `Shift` FROM `Employee`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="_449_testDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="_449_testDataSet" msprop:Generator_UserDSName="_449_testDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Calendar" msprop:Generator_TableClassName="CalendarDataTable" msprop:Generator_TableVarName="tableCalendar" msprop:Generator_TablePropName="Calendar" msprop:Generator_RowDeletingName="CalendarRowDeleting" msprop:Generator_RowChangingName="CalendarRowChanging" msprop:Generator_RowEvHandlerName="CalendarRowChangeEventHandler" msprop:Generator_RowDeletedName="CalendarRowDeleted" msprop:Generator_UserTableName="Calendar" msprop:Generator_RowChangedName="CalendarRowChanged" msprop:Generator_RowEvArgName="CalendarRowChangeEvent" msprop:Generator_RowClassName="CalendarRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Employee" msprop:Generator_TableClassName="EmployeeDataTable" msprop:Generator_TableVarName="tableEmployee" msprop:Generator_TablePropName="Employee" msprop:Generator_RowDeletingName="EmployeeRowDeleting" msprop:Generator_RowChangingName="EmployeeRowChanging" msprop:Generator_RowEvHandlerName="EmployeeRowChangeEventHandler" msprop:Generator_RowDeletedName="EmployeeRowDeleted" msprop:Generator_UserTableName="Employee" msprop:Generator_RowChangedName="EmployeeRowChanged" msprop:Generator_RowEvArgName="EmployeeRowChangeEvent" msprop:Generator_RowClassName="EmployeeRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

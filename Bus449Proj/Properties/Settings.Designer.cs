@@ -44,5 +44,27 @@ namespace Bus449Proj.Properties {
                 return ((string)(this["_449_dbConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=danielshiels.com;user id=jagraige;persistsecurityinfo=True;database=449_te" +
+            "st")]
+        public string _449_testConnectionString {
+            get {
+                return ((string)(this["_449_testConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=danielshiels.com;user id=jagraige;persistsecurityinfo=True;database=449_db" +
+            "")]
+        public string _449_dbConnectionString2 {
+            get {
+                return ((string)(this["_449_dbConnectionString2"]));
+            }
+        }
     }
 }

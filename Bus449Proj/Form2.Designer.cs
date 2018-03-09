@@ -39,6 +39,12 @@
             this.enddayTextBox = new System.Windows.Forms.TextBox();
             this.endyearTextBox = new System.Windows.Forms.TextBox();
             this.mainButton = new System.Windows.Forms.Button();
+            this.holidayTextBox = new System.Windows.Forms.TextBox();
+            this.holiyearTextBox = new System.Windows.Forms.TextBox();
+            this.holimonthTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.holidaysListBox = new System.Windows.Forms.ListBox();
+            this.addButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -61,7 +67,7 @@
             // 
             // createButton
             // 
-            this.createButton.Location = new System.Drawing.Point(16, 201);
+            this.createButton.Location = new System.Drawing.Point(16, 275);
             this.createButton.Name = "createButton";
             this.createButton.Size = new System.Drawing.Size(100, 23);
             this.createButton.TabIndex = 2;
@@ -70,7 +76,7 @@
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(239, 201);
+            this.exitButton.Location = new System.Drawing.Point(239, 275);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(102, 23);
             this.exitButton.TabIndex = 3;
@@ -89,7 +95,7 @@
             // 
             this.startyearTextBox.Location = new System.Drawing.Point(166, 50);
             this.startyearTextBox.Name = "startyearTextBox";
-            this.startyearTextBox.Size = new System.Drawing.Size(38, 20);
+            this.startyearTextBox.Size = new System.Drawing.Size(49, 20);
             this.startyearTextBox.TabIndex = 5;
             // 
             // startdayTextBox
@@ -117,12 +123,12 @@
             // 
             this.endyearTextBox.Location = new System.Drawing.Point(166, 104);
             this.endyearTextBox.Name = "endyearTextBox";
-            this.endyearTextBox.Size = new System.Drawing.Size(38, 20);
+            this.endyearTextBox.Size = new System.Drawing.Size(49, 20);
             this.endyearTextBox.TabIndex = 9;
             // 
             // mainButton
             // 
-            this.mainButton.Location = new System.Drawing.Point(122, 201);
+            this.mainButton.Location = new System.Drawing.Point(122, 275);
             this.mainButton.Name = "mainButton";
             this.mainButton.Size = new System.Drawing.Size(111, 23);
             this.mainButton.TabIndex = 10;
@@ -130,11 +136,64 @@
             this.mainButton.UseVisualStyleBackColor = true;
             this.mainButton.Click += new System.EventHandler(this.mainButton_Click);
             // 
+            // holidayTextBox
+            // 
+            this.holidayTextBox.Location = new System.Drawing.Point(423, 50);
+            this.holidayTextBox.Name = "holidayTextBox";
+            this.holidayTextBox.Size = new System.Drawing.Size(38, 20);
+            this.holidayTextBox.TabIndex = 14;
+            // 
+            // holiyearTextBox
+            // 
+            this.holiyearTextBox.Location = new System.Drawing.Point(467, 50);
+            this.holiyearTextBox.Name = "holiyearTextBox";
+            this.holiyearTextBox.Size = new System.Drawing.Size(46, 20);
+            this.holiyearTextBox.TabIndex = 13;
+            // 
+            // holimonthTextBox
+            // 
+            this.holimonthTextBox.Location = new System.Drawing.Point(379, 50);
+            this.holimonthTextBox.Name = "holimonthTextBox";
+            this.holimonthTextBox.Size = new System.Drawing.Size(38, 20);
+            this.holimonthTextBox.TabIndex = 12;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(302, 57);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Holiday Date:";
+            // 
+            // holidaysListBox
+            // 
+            this.holidaysListBox.FormattingEnabled = true;
+            this.holidaysListBox.Location = new System.Drawing.Point(305, 117);
+            this.holidaysListBox.Name = "holidaysListBox";
+            this.holidaysListBox.Size = new System.Drawing.Size(208, 134);
+            this.holidaysListBox.TabIndex = 15;
+            // 
+            // addButton
+            // 
+            this.addButton.Location = new System.Drawing.Point(379, 88);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(134, 23);
+            this.addButton.TabIndex = 16;
+            this.addButton.Text = "Add Holiday";
+            this.addButton.UseVisualStyleBackColor = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(366, 305);
+            this.ClientSize = new System.Drawing.Size(579, 343);
+            this.Controls.Add(this.addButton);
+            this.Controls.Add(this.holidaysListBox);
+            this.Controls.Add(this.holidayTextBox);
+            this.Controls.Add(this.holiyearTextBox);
+            this.Controls.Add(this.holimonthTextBox);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.mainButton);
             this.Controls.Add(this.endyearTextBox);
             this.Controls.Add(this.enddayTextBox);
@@ -166,5 +225,11 @@
         private System.Windows.Forms.TextBox enddayTextBox;
         private System.Windows.Forms.TextBox endyearTextBox;
         private System.Windows.Forms.Button mainButton;
+        private System.Windows.Forms.TextBox holidayTextBox;
+        private System.Windows.Forms.TextBox holiyearTextBox;
+        private System.Windows.Forms.TextBox holimonthTextBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListBox holidaysListBox;
+        private System.Windows.Forms.Button addButton;
     }
 }

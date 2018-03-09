@@ -18,5 +18,21 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">server=danielshiels.com;user id=dmshiels;password=N57&gt;th`eFJ?-[}[m;persistsecurityinfo=True;database=449_db;allowuservariables=True</Value>
     </Setting>
+    <Setting Name="_449_testConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;server=danielshiels.com;user id=jagraige;persistsecurityinfo=True;database=449_test&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">server=danielshiels.com;user id=jagraige;persistsecurityinfo=True;database=449_test</Value>
+    </Setting>
+    <Setting Name="_449_dbConnectionString2" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;server=danielshiels.com;user id=jagraige;persistsecurityinfo=True;database=449_db&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">server=danielshiels.com;user id=jagraige;persistsecurityinfo=True;database=449_db</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
