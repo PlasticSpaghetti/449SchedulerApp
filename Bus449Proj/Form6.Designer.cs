@@ -185,7 +185,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(453, 337);
+            this.ClientSize = new System.Drawing.Size(515, 348);
             this.Controls.Add(this.idComboBox);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.addButton);

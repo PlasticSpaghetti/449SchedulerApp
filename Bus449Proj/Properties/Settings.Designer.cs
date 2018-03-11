@@ -66,5 +66,15 @@ namespace Bus449Proj.Properties {
                 return ((string)(this["_449_dbConnectionString2"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\Bus449_Test.accdb")]
+        public string Bus449_TestConnectionString {
+            get {
+                return ((string)(this["Bus449_TestConnectionString"]));
+            }
+        }
     }
 }
