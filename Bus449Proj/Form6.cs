@@ -29,5 +29,28 @@ namespace Bus449Proj
         {
             Application.Exit();
         }
+
+        private void employeeBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Validate();
+                this.employeeBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.bus449_TestDataSet);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Error Message", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+            }
+           
+
+        }
+
+        private void Form6_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'bus449_TestDataSet.Employee' table. You can move, or remove it, as needed.
+            this.employeeTableAdapter.Fill(this.bus449_TestDataSet.Employee);
+
+        }
     }
 }
