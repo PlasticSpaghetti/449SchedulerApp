@@ -30,7 +30,7 @@ namespace Bus449Proj {
         
         private global::System.Data.DataRelation relationEmployeeOncall_Calendar;
         
-        private global::System.Data.DataRelation relationEmployeeOncall_Calendar1;
+        private global::System.Data.DataRelation relationEmployeeOncall_CalendarP;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -223,7 +223,7 @@ namespace Bus449Proj {
                 }
             }
             this.relationEmployeeOncall_Calendar = this.Relations["EmployeeOncall_Calendar"];
-            this.relationEmployeeOncall_Calendar1 = this.Relations["EmployeeOncall_Calendar1"];
+            this.relationEmployeeOncall_CalendarP = this.Relations["EmployeeOncall_CalendarP"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -239,13 +239,13 @@ namespace Bus449Proj {
             this.tableOncall_Calendar = new Oncall_CalendarDataTable();
             base.Tables.Add(this.tableOncall_Calendar);
             this.relationEmployeeOncall_Calendar = new global::System.Data.DataRelation("EmployeeOncall_Calendar", new global::System.Data.DataColumn[] {
-                        this.tableEmployee.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableOncall_Calendar.empid_amColumn}, false);
+                        this.tableOncall_Calendar.empid_amColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEmployee.IDColumn}, false);
             this.Relations.Add(this.relationEmployeeOncall_Calendar);
-            this.relationEmployeeOncall_Calendar1 = new global::System.Data.DataRelation("EmployeeOncall_Calendar1", new global::System.Data.DataColumn[] {
-                        this.tableEmployee.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableOncall_Calendar.empid_pmColumn}, false);
-            this.Relations.Add(this.relationEmployeeOncall_Calendar1);
+            this.relationEmployeeOncall_CalendarP = new global::System.Data.DataRelation("EmployeeOncall_CalendarP", new global::System.Data.DataColumn[] {
+                        this.tableOncall_Calendar.empid_pmColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEmployee.IDColumn}, false);
+            this.Relations.Add(this.relationEmployeeOncall_CalendarP);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -784,20 +784,14 @@ namespace Bus449Proj {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Oncall_CalendarRow AddOncall_CalendarRow(System.DateTime Date_ID, EmployeeRow parentEmployeeRowByEmployeeOncall_Calendar, EmployeeRow parentEmployeeRowByEmployeeOncall_Calendar1, bool holiday, string holiday_desc) {
+            public Oncall_CalendarRow AddOncall_CalendarRow(System.DateTime Date_ID, int empid_am, int empid_pm, bool holiday, string holiday_desc) {
                 Oncall_CalendarRow rowOncall_CalendarRow = ((Oncall_CalendarRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Date_ID,
-                        null,
-                        null,
+                        empid_am,
+                        empid_pm,
                         holiday,
                         holiday_desc};
-                if ((parentEmployeeRowByEmployeeOncall_Calendar != null)) {
-                    columnValuesArray[1] = parentEmployeeRowByEmployeeOncall_Calendar[0];
-                }
-                if ((parentEmployeeRowByEmployeeOncall_Calendar1 != null)) {
-                    columnValuesArray[2] = parentEmployeeRowByEmployeeOncall_Calendar1[0];
-                }
                 rowOncall_CalendarRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowOncall_CalendarRow);
                 return rowOncall_CalendarRow;
@@ -1085,6 +1079,28 @@ namespace Bus449Proj {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Oncall_CalendarRow Oncall_CalendarRow {
+                get {
+                    return ((Oncall_CalendarRow)(this.GetParentRow(this.Table.ParentRelations["EmployeeOncall_Calendar"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["EmployeeOncall_Calendar"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public Oncall_CalendarRow Oncall_CalendarRowByEmployeeOncall_CalendarP {
+                get {
+                    return ((Oncall_CalendarRow)(this.GetParentRow(this.Table.ParentRelations["EmployeeOncall_CalendarP"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["EmployeeOncall_CalendarP"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsF_NameNull() {
                 return this.IsNull(this.tableEmployee.F_NameColumn);
             }
@@ -1141,28 +1157,6 @@ namespace Bus449Proj {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetshiftNull() {
                 this[this.tableEmployee.shiftColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Oncall_CalendarRow[] GetOncall_CalendarRowsByEmployeeOncall_Calendar() {
-                if ((this.Table.ChildRelations["EmployeeOncall_Calendar"] == null)) {
-                    return new Oncall_CalendarRow[0];
-                }
-                else {
-                    return ((Oncall_CalendarRow[])(base.GetChildRows(this.Table.ChildRelations["EmployeeOncall_Calendar"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Oncall_CalendarRow[] GetOncall_CalendarRowsByEmployeeOncall_Calendar1() {
-                if ((this.Table.ChildRelations["EmployeeOncall_Calendar1"] == null)) {
-                    return new Oncall_CalendarRow[0];
-                }
-                else {
-                    return ((Oncall_CalendarRow[])(base.GetChildRows(this.Table.ChildRelations["EmployeeOncall_Calendar1"])));
-                }
             }
         }
         
@@ -1257,28 +1251,6 @@ namespace Bus449Proj {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public EmployeeRow EmployeeRowByEmployeeOncall_Calendar {
-                get {
-                    return ((EmployeeRow)(this.GetParentRow(this.Table.ParentRelations["EmployeeOncall_Calendar"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["EmployeeOncall_Calendar"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public EmployeeRow EmployeeRowByEmployeeOncall_Calendar1 {
-                get {
-                    return ((EmployeeRow)(this.GetParentRow(this.Table.ParentRelations["EmployeeOncall_Calendar1"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["EmployeeOncall_Calendar1"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Isempid_amNull() {
                 return this.IsNull(this.tableOncall_Calendar.empid_amColumn);
             }
@@ -1323,6 +1295,28 @@ namespace Bus449Proj {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setholiday_descNull() {
                 this[this.tableOncall_Calendar.holiday_descColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EmployeeRow[] GetEmployeeRows() {
+                if ((this.Table.ChildRelations["EmployeeOncall_Calendar"] == null)) {
+                    return new EmployeeRow[0];
+                }
+                else {
+                    return ((EmployeeRow[])(base.GetChildRows(this.Table.ChildRelations["EmployeeOncall_Calendar"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EmployeeRow[] GetEmployeeRowsByEmployeeOncall_CalendarP() {
+                if ((this.Table.ChildRelations["EmployeeOncall_CalendarP"] == null)) {
+                    return new EmployeeRow[0];
+                }
+                else {
+                    return ((EmployeeRow[])(base.GetChildRows(this.Table.ChildRelations["EmployeeOncall_CalendarP"])));
+                }
             }
         }
         
@@ -1583,11 +1577,19 @@ namespace Bus449Proj.Bus449_TestDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, F_Name, L_Name, email, phone, shift FROM Employee";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT COUNT(*) \r\nFROM Employee\r\nWHERE shift = \"A\"";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT COUNT(*) \r\nFROM Employee\r\nWHERE shift = \"P\"";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1845,6 +1847,62 @@ namespace Bus449Proj.Bus449_TestDataSetTableAdapters {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> AMCount() {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> PMCount() {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[2];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
             }
         }
     }
@@ -2371,21 +2429,21 @@ namespace Bus449Proj.Bus449_TestDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateUpdatedRows(Bus449_TestDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._employeeTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Employee.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._employeeTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._oncall_CalendarTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Oncall_Calendar.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._oncall_CalendarTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._employeeTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Employee.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._employeeTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -2399,19 +2457,19 @@ namespace Bus449Proj.Bus449_TestDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateInsertedRows(Bus449_TestDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._employeeTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Employee.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._employeeTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._oncall_CalendarTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Oncall_Calendar.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._oncall_CalendarTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._employeeTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Employee.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._employeeTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -2425,19 +2483,19 @@ namespace Bus449Proj.Bus449_TestDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(Bus449_TestDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._oncall_CalendarTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Oncall_Calendar.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._oncall_CalendarTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._employeeTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Employee.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._employeeTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._oncall_CalendarTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Oncall_Calendar.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._oncall_CalendarTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

@@ -10,8 +10,11 @@ using System.Windows.Forms;
 
 namespace Bus449Proj
 {
+    
     public partial class Form6 : Form
     {
+        
+
         public Form6()
         {
             InitializeComponent();
@@ -32,6 +35,7 @@ namespace Bus449Proj
 
         private void employeeBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
+            //saves any changes made to an employee
             try
             {
                 this.Validate();
