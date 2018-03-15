@@ -34,14 +34,14 @@ namespace Bus449Proj
         private void viewButton_Click(object sender, EventArgs e)
         {
             string fname, lname;
-            int id;
+            int id = 1;
             fname = firstTextBox.Text;
             lname = lastTextBox.Text;
 
             Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter oncall = new Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
             Bus449_TestDataSetTableAdapters.EmployeeTableAdapter employee = new Bus449_TestDataSetTableAdapters.EmployeeTableAdapter();
 
-           int.TryParse(employeeTableAdapter.GetDataByName(lname, fname).ToString(), out id);
+           id = int.Parse(employeeTableAdapter.GetDataByName(lname, fname).ToString());
 
             datesListBox.Items.Add(oncall.GetDataByID(id, id));
             
