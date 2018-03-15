@@ -32,13 +32,10 @@
             this.exitButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.endyearTextBox = new System.Windows.Forms.TextBox();
-            this.enddayTextBox = new System.Windows.Forms.TextBox();
-            this.endmonthTextBox = new System.Windows.Forms.TextBox();
-            this.startdayTextBox = new System.Windows.Forms.TextBox();
-            this.startyearTextBox = new System.Windows.Forms.TextBox();
-            this.startmonthTextBox = new System.Windows.Forms.TextBox();
             this.dateviewListBox = new System.Windows.Forms.ListBox();
+            this.startDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.endDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.viewButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mainButton
@@ -79,48 +76,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "End Date:";
             // 
-            // endyearTextBox
-            // 
-            this.endyearTextBox.Location = new System.Drawing.Point(172, 67);
-            this.endyearTextBox.Name = "endyearTextBox";
-            this.endyearTextBox.Size = new System.Drawing.Size(38, 20);
-            this.endyearTextBox.TabIndex = 15;
-            // 
-            // enddayTextBox
-            // 
-            this.enddayTextBox.Location = new System.Drawing.Point(128, 67);
-            this.enddayTextBox.Name = "enddayTextBox";
-            this.enddayTextBox.Size = new System.Drawing.Size(38, 20);
-            this.enddayTextBox.TabIndex = 14;
-            // 
-            // endmonthTextBox
-            // 
-            this.endmonthTextBox.Location = new System.Drawing.Point(84, 67);
-            this.endmonthTextBox.Name = "endmonthTextBox";
-            this.endmonthTextBox.Size = new System.Drawing.Size(38, 20);
-            this.endmonthTextBox.TabIndex = 13;
-            // 
-            // startdayTextBox
-            // 
-            this.startdayTextBox.Location = new System.Drawing.Point(128, 13);
-            this.startdayTextBox.Name = "startdayTextBox";
-            this.startdayTextBox.Size = new System.Drawing.Size(38, 20);
-            this.startdayTextBox.TabIndex = 12;
-            // 
-            // startyearTextBox
-            // 
-            this.startyearTextBox.Location = new System.Drawing.Point(172, 13);
-            this.startyearTextBox.Name = "startyearTextBox";
-            this.startyearTextBox.Size = new System.Drawing.Size(38, 20);
-            this.startyearTextBox.TabIndex = 11;
-            // 
-            // startmonthTextBox
-            // 
-            this.startmonthTextBox.Location = new System.Drawing.Point(84, 13);
-            this.startmonthTextBox.Name = "startmonthTextBox";
-            this.startmonthTextBox.Size = new System.Drawing.Size(38, 20);
-            this.startmonthTextBox.TabIndex = 10;
-            // 
             // dateviewListBox
             // 
             this.dateviewListBox.FormattingEnabled = true;
@@ -129,18 +84,38 @@
             this.dateviewListBox.Size = new System.Drawing.Size(150, 160);
             this.dateviewListBox.TabIndex = 16;
             // 
+            // startDateTimePicker
+            // 
+            this.startDateTimePicker.Location = new System.Drawing.Point(88, 14);
+            this.startDateTimePicker.Name = "startDateTimePicker";
+            this.startDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.startDateTimePicker.TabIndex = 17;
+            // 
+            // endDateTimePicker
+            // 
+            this.endDateTimePicker.Location = new System.Drawing.Point(88, 68);
+            this.endDateTimePicker.Name = "endDateTimePicker";
+            this.endDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.endDateTimePicker.TabIndex = 18;
+            // 
+            // viewButton
+            // 
+            this.viewButton.Location = new System.Drawing.Point(194, 167);
+            this.viewButton.Name = "viewButton";
+            this.viewButton.Size = new System.Drawing.Size(75, 23);
+            this.viewButton.TabIndex = 19;
+            this.viewButton.Text = "View";
+            this.viewButton.UseVisualStyleBackColor = true;
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(313, 301);
+            this.Controls.Add(this.viewButton);
+            this.Controls.Add(this.endDateTimePicker);
+            this.Controls.Add(this.startDateTimePicker);
             this.Controls.Add(this.dateviewListBox);
-            this.Controls.Add(this.endyearTextBox);
-            this.Controls.Add(this.enddayTextBox);
-            this.Controls.Add(this.endmonthTextBox);
-            this.Controls.Add(this.startdayTextBox);
-            this.Controls.Add(this.startyearTextBox);
-            this.Controls.Add(this.startmonthTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.exitButton);
@@ -158,12 +133,9 @@
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox endyearTextBox;
-        private System.Windows.Forms.TextBox enddayTextBox;
-        private System.Windows.Forms.TextBox endmonthTextBox;
-        private System.Windows.Forms.TextBox startdayTextBox;
-        private System.Windows.Forms.TextBox startyearTextBox;
-        private System.Windows.Forms.TextBox startmonthTextBox;
         private System.Windows.Forms.ListBox dateviewListBox;
+        private System.Windows.Forms.DateTimePicker startDateTimePicker;
+        private System.Windows.Forms.DateTimePicker endDateTimePicker;
+        private System.Windows.Forms.Button viewButton;
     }
 }

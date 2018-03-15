@@ -35,6 +35,12 @@
             this.datesListBox = new System.Windows.Forms.ListBox();
             this.exitButton = new System.Windows.Forms.Button();
             this.mainButton = new System.Windows.Forms.Button();
+            this.viewButton = new System.Windows.Forms.Button();
+            this.oncall_CalendarTableAdapter = new Bus449Proj.Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
+            this.tableAdapterManager = new Bus449Proj.Bus449_TestDataSetTableAdapters.TableAdapterManager();
+            this.bus449_TestDataSet = new Bus449Proj.Bus449_TestDataSet();
+            this.employeeTableAdapter = new Bus449Proj.Bus449_TestDataSetTableAdapters.EmployeeTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.bus449_TestDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -97,11 +103,42 @@
             this.mainButton.UseVisualStyleBackColor = true;
             this.mainButton.Click += new System.EventHandler(this.mainButton_Click);
             // 
+            // viewButton
+            // 
+            this.viewButton.Location = new System.Drawing.Point(224, 198);
+            this.viewButton.Name = "viewButton";
+            this.viewButton.Size = new System.Drawing.Size(75, 23);
+            this.viewButton.TabIndex = 7;
+            this.viewButton.Text = "View";
+            this.viewButton.UseVisualStyleBackColor = true;
+            this.viewButton.Click += new System.EventHandler(this.viewButton_Click);
+            // 
+            // oncall_CalendarTableAdapter
+            // 
+            this.oncall_CalendarTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.EmployeeTableAdapter = this.employeeTableAdapter;
+            this.tableAdapterManager.Oncall_CalendarTableAdapter = this.oncall_CalendarTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Bus449Proj.Bus449_TestDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // bus449_TestDataSet
+            // 
+            this.bus449_TestDataSet.DataSetName = "Bus449_TestDataSet";
+            this.bus449_TestDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // employeeTableAdapter
+            // 
+            this.employeeTableAdapter.ClearBeforeFill = true;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(326, 348);
+            this.Controls.Add(this.viewButton);
             this.Controls.Add(this.mainButton);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.datesListBox);
@@ -111,6 +148,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form3";
             this.Text = "Employee View";
+            ((System.ComponentModel.ISupportInitialize)(this.bus449_TestDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,5 +163,10 @@
         private System.Windows.Forms.ListBox datesListBox;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button mainButton;
+        private System.Windows.Forms.Button viewButton;
+        private Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter oncall_CalendarTableAdapter;
+        private Bus449_TestDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private Bus449_TestDataSetTableAdapters.EmployeeTableAdapter employeeTableAdapter;
+        private Bus449_TestDataSet bus449_TestDataSet;
     }
 }

@@ -50,6 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bus449_TestDataSet.cs">
+      <DependentUpon>Bus449_TestDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Bus449_TestDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

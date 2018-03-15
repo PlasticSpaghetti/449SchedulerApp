@@ -30,5 +30,21 @@ namespace Bus449Proj
             form1.Show();
             
         }
+
+        private void viewButton_Click(object sender, EventArgs e)
+        {
+            string fname, lname;
+            int id;
+            fname = firstTextBox.Text;
+            lname = lastTextBox.Text;
+
+            Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter oncall = new Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
+            Bus449_TestDataSetTableAdapters.EmployeeTableAdapter employee = new Bus449_TestDataSetTableAdapters.EmployeeTableAdapter();
+
+           int.TryParse(employeeTableAdapter.GetDataByName(lname, fname).ToString(), out id);
+
+            datesListBox.Items.Add(oncall.GetDataByID(id, id));
+            
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace Bus449Proj
     {
         //counter variables for am and pm employees
         private int amemps, pmemps, a,p;
-        private int[] holia, holip;
+        private int[] holia, holip, amid, pmid;
 
         public Form2()
         {
@@ -48,15 +48,32 @@ namespace Bus449Proj
             holidaysListBox.Items.Add(day.Date + " " + holiname);
             
             Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter oncall = new Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
-            //inserts the holiday into the calendar with employees
-            oncall.Insert(day.Date, holia[a], holip[p], holiday, holiname);
+            int x =0, y = 0;
+            foreach (DataRow dr in bus449_TestDataSet.Employee.Rows)
+            {
+                if (dr["shift"].ToString() == "A")
+                {
+                    holia[x] = int.Parse(dr["ID"].ToString());
+                    x++;
+                }
+                else
+                {
+                    holia[y] = int.Parse(dr["ID"].ToString());
+                    y++;
+                }
 
-            a++; p++;
+            }
 
-            if (a >= holia.Length)
-                a = 0;
-            if (p >= holip.Length)
-                p = 0;
+                //inserts the holiday into the calendar with employees
+                oncall.Insert(day.Date, holia[a], holia[p], holiday, holiname);
+
+                a++; p++;
+
+                if (a >= holia.Length)
+                    a = 0;
+                if (p >= holip.Length)
+                    p = 0;
+            
         }
 
         private void createButton_Click(object sender, EventArgs e)
@@ -67,57 +84,56 @@ namespace Bus449Proj
             startdate = startdateTimePicker.Value;
             enddate = enddateTimePicker.Value;
 
-            //counts the number of am and pm employees
-            amemps = (int) this.employeeTableAdapter.AMCount();
-            pmemps = (int) this.employeeTableAdapter.PMCount();
+            //creates usable adapter
+            Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter oncall = new Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
+            
+           
 
             //creates and populates arrays for employees IDs
-            int[] amid = new int[amemps];
-            int[] pmid = new int[pmemps];
             int x = 0, y = 0;
-            foreach(DataRow dr in bus449_TestDataSet.Employee.Rows)
+            foreach (DataRow dr in bus449_TestDataSet.Employee.Rows)
             {
-                if(dr["shift"].ToString() == "A")
+                if (dr["shift"].ToString() == "A")
                 {
-                    int.TryParse(dr["ID"].ToString(), out amid[x]);
+                    amid[x] = int.Parse(dr["ID"].ToString());
                     x++;
                 }
                 else
                 {
-                    int.TryParse(dr["ID"].ToString(), out pmid[y]);
+                    pmid[y] = int.Parse(dr["ID"].ToString());
                     y++;
                 }
 
             }
+
 
             int loopa=0, loopp=0; bool holiday = false;
             string holiname = "";
             //loops from startdate to enddate
             for (var day = startdate.Date; day.Date <= enddate.Date; day = day.AddDays(1))
             {
-
-                //checks if the day is a holiday or not
-                if (!holidaysListBox.Items.Contains(day.Date))
+                int count = 0;
+                count = (int) oncall.ScalarCheck(day.Date);
+                if (count <= 0)
                 {
-                    //creates usable adapter
-                    Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter oncall = new Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
                     //inserts the day into the calendar with an am and pm oncall employee
                     oncall.Insert(day.Date, amid[loopa], pmid[loopp], holiday, holiname);
 
                     //rotates to next employee
                     loopa++; loopp++;
 
+                }
+                
                     //resets the array to prevent errors
                     if (loopa >= amid.Length)
                         loopa = 0;
                     if (loopp >= pmid.Length)
                         loopp = 0;
-                }
-              
-               
+                
 
             }
-         }
+            this.tableAdapterManager.UpdateAll(this.bus449_TestDataSet);
+        }
 
         private void oncall_CalendarBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -130,19 +146,33 @@ namespace Bus449Proj
         private void clearButton_Click(object sender, EventArgs e)
         {
             //clears the calendar
-            this.bus449_TestDataSet.Oncall_Calendar.Clear();
+            foreach (DataRow dr in bus449_TestDataSet.Oncall_Calendar.Rows)
+            {
+                dr.Delete();
+            }
+                this.tableAdapterManager.UpdateAll(this.bus449_TestDataSet);
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'bus449_TestDataSet.Oncall_Calendar' table. You can move, or remove it, as needed.
             this.oncall_CalendarTableAdapter.Fill(this.bus449_TestDataSet.Oncall_Calendar);
+            // TODO: This line of code loads data into the 'bus449_TestDataSet.Employee' table. You can move, or remove it, as needed.
+            this.employeeTableAdapter.Fill(this.bus449_TestDataSet.Employee);
 
+            //counts the number of am and pm employees
             amemps = (int)this.employeeTableAdapter.AMCount();
             pmemps = (int)this.employeeTableAdapter.PMCount();
 
+            //populates holiday loop arrays
             holia = new int[amemps];
             holip = new int[pmemps];
+
+            //populates regular loop arrays
+            amid = new int[amemps];
+            pmid = new int[pmemps];
+
+          
         }
     }
 }
