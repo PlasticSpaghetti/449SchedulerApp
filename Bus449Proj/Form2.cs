@@ -58,14 +58,14 @@ namespace Bus449Proj
                 }
                 else
                 {
-                    holia[y] = int.Parse(dr["ID"].ToString());
+                    holip[y] = int.Parse(dr["ID"].ToString());
                     y++;
                 }
 
             }
 
                 //inserts the holiday into the calendar with employees
-                oncall.Insert(day.Date, holia[a], holia[p], holiday, holiname);
+                oncall.Insert(day.Date, holia[a], holip[p], holiday, holiname);
 
                 a++; p++;
 
