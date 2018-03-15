@@ -46,7 +46,13 @@ namespace Bus449Proj
            //int.TryParse(employeeTableAdapter.GetDataByName(lname, fname).ToString(), out id);
            foreach(DataRow dr in bus449_TestDataSet.Oncall_Calendar.Rows)
             {
-                
+                int am, pm;
+                int.TryParse(dr["empid_am"].ToString(), out am);
+                int.TryParse(dr["empid_pm"].ToString(), out pm);
+                if(am == id || pm == id)
+                {
+                    datesListBox.Items.Add(dr["Date_ID"].ToString());
+                }
             }
             
             
