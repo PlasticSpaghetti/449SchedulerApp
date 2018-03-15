@@ -2164,6 +2164,29 @@ namespace Bus449Proj.Bus449_TestDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Bus449_TestDataSet.Oncall_CalendarDataTable GetDataByID(global::System.Nullable<int> empid_am, global::System.Nullable<int> empid_pm) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((empid_am.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(empid_am.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((empid_pm.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(empid_pm.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            Bus449_TestDataSet.Oncall_CalendarDataTable dataTable = new Bus449_TestDataSet.Oncall_CalendarDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Bus449_TestDataSet.Oncall_CalendarDataTable GetDataByDate(System.DateTime Date_ID) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(Date_ID));

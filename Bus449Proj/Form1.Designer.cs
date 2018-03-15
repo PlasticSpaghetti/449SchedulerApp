@@ -34,6 +34,7 @@
             this.dateButton = new System.Windows.Forms.Button();
             this.switchButton = new System.Windows.Forms.Button();
             this.manageButton = new System.Windows.Forms.Button();
+            this.calendarButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // createButton
@@ -96,11 +97,22 @@
             this.manageButton.UseVisualStyleBackColor = true;
             this.manageButton.Click += new System.EventHandler(this.manageButton_Click);
             // 
+            // calendarButton
+            // 
+            this.calendarButton.Location = new System.Drawing.Point(181, 208);
+            this.calendarButton.Name = "calendarButton";
+            this.calendarButton.Size = new System.Drawing.Size(75, 23);
+            this.calendarButton.TabIndex = 6;
+            this.calendarButton.Text = "Calendar";
+            this.calendarButton.UseVisualStyleBackColor = true;
+            this.calendarButton.Click += new System.EventHandler(this.calendarButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(448, 259);
+            this.Controls.Add(this.calendarButton);
             this.Controls.Add(this.manageButton);
             this.Controls.Add(this.switchButton);
             this.Controls.Add(this.dateButton);
@@ -121,6 +133,7 @@
         private System.Windows.Forms.Button dateButton;
         private System.Windows.Forms.Button switchButton;
         private System.Windows.Forms.Button manageButton;
+        private System.Windows.Forms.Button calendarButton;
     }
 }
 
