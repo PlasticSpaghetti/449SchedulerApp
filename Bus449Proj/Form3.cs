@@ -33,18 +33,38 @@ namespace Bus449Proj
 
         private void viewButton_Click(object sender, EventArgs e)
         {
-            string fname, lname;
-            int id = 1;
-            fname = firstTextBox.Text;
-            lname = lastTextBox.Text;
+
+            int id;
+            int.TryParse(iDLabel1.Text, out id);
+            //fname = firstTextBox.Text;
+            //lname = lastTextBox.Text;
 
             Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter oncall = new Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
             Bus449_TestDataSetTableAdapters.EmployeeTableAdapter employee = new Bus449_TestDataSetTableAdapters.EmployeeTableAdapter();
 
-           id = int.Parse(employeeTableAdapter.GetDataByName(lname, fname).ToString());
+           //int.TryParse(employeeTableAdapter.GetDataByName(lname, fname).ToString(), out id);
+           foreach(DataRow dr in bus449_TestDataSet.Oncall_Calendar.Rows)
+            {
 
-            datesListBox.Items.Add(oncall.GetDataByID(id, id));
+            }
             
+            
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'bus449_TestDataSet.Oncall_Calendar' table. You can move, or remove it, as needed.
+            this.oncall_CalendarTableAdapter.Fill(this.bus449_TestDataSet.Oncall_Calendar);
+            // TODO: This line of code loads data into the 'bus449_TestDataSet.Employee' table. You can move, or remove it, as needed.
+            this.employeeTableAdapter.Fill(this.bus449_TestDataSet.Employee);
+        }
+
+        private void employeeBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.employeeBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.bus449_TestDataSet);
+
         }
     }
 }
