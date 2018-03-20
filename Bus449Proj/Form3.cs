@@ -51,7 +51,9 @@ namespace Bus449Proj
                 int.TryParse(dr["empid_pm"].ToString(), out pm);
                 if(am == id || pm == id)
                 {
-                    datesListBox.Items.Add(dr["Date_ID"].ToString());
+                    DateTime add = new DateTime();
+                    add = DateTime.Parse(dr["Date_ID"].ToString());
+                    datesListBox.Items.Add(add.ToString("MM/dd/yyyy"));
                 }
             }
             

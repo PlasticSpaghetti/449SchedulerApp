@@ -53,7 +53,10 @@ namespace Bus449Proj
 
         private void switchButton_Click(object sender, EventArgs e)
         {
+            //creates usable adapter
+            Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter oncall = new Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
 
+ 
         }
     }
 }

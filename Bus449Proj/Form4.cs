@@ -48,9 +48,12 @@ namespace Bus449Proj
                 if(date >= start && date <= end)
                 {
                     int am, pm;
+                    string amlname, pmlname, amphone, pmphone;
+
                     int.TryParse(dr["empid_am"].ToString(), out am);
                     int.TryParse(dr["empid_pm"].ToString(), out pm);
-
+                    employee.GetDataByID(am);
+                    
                     string addam = date.ToString("MM/dd/yyyy") + " " + am.ToString();
                     string addpm = date.ToString("MM/dd/yyyy") + " " + pm.ToString();
 
