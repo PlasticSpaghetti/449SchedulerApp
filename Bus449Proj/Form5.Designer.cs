@@ -28,22 +28,86 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label date_IDLabel;
+            System.Windows.Forms.Label l_NameLabel;
+            System.Windows.Forms.Label f_NameLabel;
+            System.Windows.Forms.Label l_NameLabel1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
             this.mainButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.switchButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.currentfirstTextBox = new System.Windows.Forms.TextBox();
-            this.currentlastTextBox = new System.Windows.Forms.TextBox();
-            this.newfirstTextBox = new System.Windows.Forms.TextBox();
-            this.newlastTextBox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.swtichmonthTextBox = new System.Windows.Forms.TextBox();
-            this.switchyearTextBox = new System.Windows.Forms.TextBox();
-            this.switchdayTextBox = new System.Windows.Forms.TextBox();
+            this.bus449_TestDataSet = new Bus449Proj.Bus449_TestDataSet();
+            this.employeeTableAdapter = new Bus449Proj.Bus449_TestDataSetTableAdapters.EmployeeTableAdapter();
+            this.oncall_CalendarTableAdapter = new Bus449Proj.Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
+            this.tableAdapterManager = new Bus449Proj.Bus449_TestDataSetTableAdapters.TableAdapterManager();
+            this.oncall_CalendarBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.oncall_CalendarBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.oncall_CalendarBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.switchDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.l_NameComboBox = new System.Windows.Forms.ComboBox();
+            this.f_NameLabel1 = new System.Windows.Forms.Label();
+            this.employeeOncallCalendarPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.newlnameComboBox = new System.Windows.Forms.ComboBox();
+            date_IDLabel = new System.Windows.Forms.Label();
+            l_NameLabel = new System.Windows.Forms.Label();
+            f_NameLabel = new System.Windows.Forms.Label();
+            l_NameLabel1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.bus449_TestDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oncall_CalendarBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oncall_CalendarBindingNavigator)).BeginInit();
+            this.oncall_CalendarBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeOncallCalendarPBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // date_IDLabel
+            // 
+            date_IDLabel.AutoSize = true;
+            date_IDLabel.Location = new System.Drawing.Point(17, 139);
+            date_IDLabel.Name = "date_IDLabel";
+            date_IDLabel.Size = new System.Drawing.Size(68, 13);
+            date_IDLabel.TabIndex = 4;
+            date_IDLabel.Text = "Switch Date:";
+            // 
+            // l_NameLabel
+            // 
+            l_NameLabel.AutoSize = true;
+            l_NameLabel.Location = new System.Drawing.Point(34, 46);
+            l_NameLabel.Name = "l_NameLabel";
+            l_NameLabel.Size = new System.Drawing.Size(47, 13);
+            l_NameLabel.TabIndex = 6;
+            l_NameLabel.Text = "L Name:";
+            // 
+            // f_NameLabel
+            // 
+            f_NameLabel.AutoSize = true;
+            f_NameLabel.Location = new System.Drawing.Point(34, 83);
+            f_NameLabel.Name = "f_NameLabel";
+            f_NameLabel.Size = new System.Drawing.Size(47, 13);
+            f_NameLabel.TabIndex = 8;
+            f_NameLabel.Text = "F Name:";
+            // 
+            // l_NameLabel1
+            // 
+            l_NameLabel1.AutoSize = true;
+            l_NameLabel1.Location = new System.Drawing.Point(321, 41);
+            l_NameLabel1.Name = "l_NameLabel1";
+            l_NameLabel1.Size = new System.Drawing.Size(47, 13);
+            l_NameLabel1.TabIndex = 10;
+            l_NameLabel1.Text = "L Name:";
             // 
             // mainButton
             // 
@@ -73,123 +137,231 @@
             this.switchButton.TabIndex = 2;
             this.switchButton.Text = "Switch";
             this.switchButton.UseVisualStyleBackColor = true;
+            this.switchButton.Click += new System.EventHandler(this.switchButton_Click);
             // 
-            // label1
+            // bus449_TestDataSet
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Current First Name:";
+            this.bus449_TestDataSet.DataSetName = "Bus449_TestDataSet";
+            this.bus449_TestDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label2
+            // employeeTableAdapter
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 62);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Current Last Name:";
+            this.employeeTableAdapter.ClearBeforeFill = true;
             // 
-            // label3
+            // oncall_CalendarTableAdapter
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(270, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "New First Name:";
+            this.oncall_CalendarTableAdapter.ClearBeforeFill = true;
             // 
-            // label4
+            // tableAdapterManager
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(270, 57);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "New Last Name:";
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.EmployeeTableAdapter = this.employeeTableAdapter;
+            this.tableAdapterManager.Oncall_CalendarTableAdapter = this.oncall_CalendarTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Bus449Proj.Bus449_TestDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // currentfirstTextBox
+            // oncall_CalendarBindingSource
             // 
-            this.currentfirstTextBox.Location = new System.Drawing.Point(141, 15);
-            this.currentfirstTextBox.Name = "currentfirstTextBox";
-            this.currentfirstTextBox.Size = new System.Drawing.Size(100, 20);
-            this.currentfirstTextBox.TabIndex = 7;
+            this.oncall_CalendarBindingSource.DataMember = "Oncall_Calendar";
+            this.oncall_CalendarBindingSource.DataSource = this.bus449_TestDataSet;
             // 
-            // currentlastTextBox
+            // oncall_CalendarBindingNavigator
             // 
-            this.currentlastTextBox.Location = new System.Drawing.Point(141, 55);
-            this.currentlastTextBox.Name = "currentlastTextBox";
-            this.currentlastTextBox.Size = new System.Drawing.Size(100, 20);
-            this.currentlastTextBox.TabIndex = 8;
+            this.oncall_CalendarBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.oncall_CalendarBindingNavigator.BindingSource = this.oncall_CalendarBindingSource;
+            this.oncall_CalendarBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.oncall_CalendarBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.oncall_CalendarBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.oncall_CalendarBindingNavigatorSaveItem});
+            this.oncall_CalendarBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.oncall_CalendarBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.oncall_CalendarBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.oncall_CalendarBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.oncall_CalendarBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.oncall_CalendarBindingNavigator.Name = "oncall_CalendarBindingNavigator";
+            this.oncall_CalendarBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.oncall_CalendarBindingNavigator.Size = new System.Drawing.Size(598, 25);
+            this.oncall_CalendarBindingNavigator.TabIndex = 3;
+            this.oncall_CalendarBindingNavigator.Text = "bindingNavigator1";
             // 
-            // newfirstTextBox
+            // bindingNavigatorAddNewItem
             // 
-            this.newfirstTextBox.Location = new System.Drawing.Point(398, 15);
-            this.newfirstTextBox.Name = "newfirstTextBox";
-            this.newfirstTextBox.Size = new System.Drawing.Size(100, 20);
-            this.newfirstTextBox.TabIndex = 9;
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
-            // newlastTextBox
+            // bindingNavigatorCountItem
             // 
-            this.newlastTextBox.Location = new System.Drawing.Point(398, 50);
-            this.newlastTextBox.Name = "newlastTextBox";
-            this.newlastTextBox.Size = new System.Drawing.Size(100, 20);
-            this.newlastTextBox.TabIndex = 10;
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
-            // label5
+            // bindingNavigatorDeleteItem
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 121);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 13);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Switch Date:";
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
-            // swtichmonthTextBox
+            // bindingNavigatorMoveFirstItem
             // 
-            this.swtichmonthTextBox.Location = new System.Drawing.Point(136, 114);
-            this.swtichmonthTextBox.Name = "swtichmonthTextBox";
-            this.swtichmonthTextBox.Size = new System.Drawing.Size(36, 20);
-            this.swtichmonthTextBox.TabIndex = 12;
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
-            // switchyearTextBox
+            // bindingNavigatorMovePreviousItem
             // 
-            this.switchyearTextBox.Location = new System.Drawing.Point(220, 114);
-            this.switchyearTextBox.Name = "switchyearTextBox";
-            this.switchyearTextBox.Size = new System.Drawing.Size(47, 20);
-            this.switchyearTextBox.TabIndex = 13;
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
-            // switchdayTextBox
+            // bindingNavigatorSeparator
             // 
-            this.switchdayTextBox.Location = new System.Drawing.Point(178, 114);
-            this.switchdayTextBox.Name = "switchdayTextBox";
-            this.switchdayTextBox.Size = new System.Drawing.Size(36, 20);
-            this.switchdayTextBox.TabIndex = 14;
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // oncall_CalendarBindingNavigatorSaveItem
+            // 
+            this.oncall_CalendarBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.oncall_CalendarBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("oncall_CalendarBindingNavigatorSaveItem.Image")));
+            this.oncall_CalendarBindingNavigatorSaveItem.Name = "oncall_CalendarBindingNavigatorSaveItem";
+            this.oncall_CalendarBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.oncall_CalendarBindingNavigatorSaveItem.Text = "Save Data";
+            this.oncall_CalendarBindingNavigatorSaveItem.Click += new System.EventHandler(this.oncall_CalendarBindingNavigatorSaveItem_Click);
+            // 
+            // switchDateTimePicker
+            // 
+            this.switchDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.oncall_CalendarBindingSource, "Date_ID", true));
+            this.switchDateTimePicker.Location = new System.Drawing.Point(91, 133);
+            this.switchDateTimePicker.Name = "switchDateTimePicker";
+            this.switchDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.switchDateTimePicker.TabIndex = 5;
+            this.switchDateTimePicker.Value = new System.DateTime(2018, 3, 20, 0, 0, 0, 0);
+            // 
+            // employeeBindingSource
+            // 
+            this.employeeBindingSource.DataMember = "Employee";
+            this.employeeBindingSource.DataSource = this.bus449_TestDataSet;
+            // 
+            // l_NameComboBox
+            // 
+            this.l_NameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "L_Name", true));
+            this.l_NameComboBox.DataSource = this.employeeBindingSource;
+            this.l_NameComboBox.DisplayMember = "L_Name";
+            this.l_NameComboBox.FormattingEnabled = true;
+            this.l_NameComboBox.Location = new System.Drawing.Point(87, 43);
+            this.l_NameComboBox.Name = "l_NameComboBox";
+            this.l_NameComboBox.Size = new System.Drawing.Size(121, 21);
+            this.l_NameComboBox.TabIndex = 7;
+            // 
+            // f_NameLabel1
+            // 
+            this.f_NameLabel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.f_NameLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "F_Name", true));
+            this.f_NameLabel1.Location = new System.Drawing.Point(87, 83);
+            this.f_NameLabel1.Name = "f_NameLabel1";
+            this.f_NameLabel1.Size = new System.Drawing.Size(100, 23);
+            this.f_NameLabel1.TabIndex = 9;
+            // 
+            // employeeOncallCalendarPBindingSource
+            // 
+            this.employeeOncallCalendarPBindingSource.DataMember = "EmployeeOncall_CalendarP";
+            this.employeeOncallCalendarPBindingSource.DataSource = this.oncall_CalendarBindingSource;
+            // 
+            // newlnameComboBox
+            // 
+            this.newlnameComboBox.FormattingEnabled = true;
+            this.newlnameComboBox.Location = new System.Drawing.Point(374, 38);
+            this.newlnameComboBox.Name = "newlnameComboBox";
+            this.newlnameComboBox.Size = new System.Drawing.Size(121, 21);
+            this.newlnameComboBox.TabIndex = 14;
             // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(598, 278);
-            this.Controls.Add(this.switchdayTextBox);
-            this.Controls.Add(this.switchyearTextBox);
-            this.Controls.Add(this.swtichmonthTextBox);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.newlastTextBox);
-            this.Controls.Add(this.newfirstTextBox);
-            this.Controls.Add(this.currentlastTextBox);
-            this.Controls.Add(this.currentfirstTextBox);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.newlnameComboBox);
+            this.Controls.Add(l_NameLabel1);
+            this.Controls.Add(f_NameLabel);
+            this.Controls.Add(this.f_NameLabel1);
+            this.Controls.Add(l_NameLabel);
+            this.Controls.Add(this.l_NameComboBox);
+            this.Controls.Add(date_IDLabel);
+            this.Controls.Add(this.switchDateTimePicker);
+            this.Controls.Add(this.oncall_CalendarBindingNavigator);
             this.Controls.Add(this.switchButton);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.mainButton);
             this.Name = "Form5";
             this.Text = "Switch";
+            this.Load += new System.EventHandler(this.Form5_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bus449_TestDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oncall_CalendarBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oncall_CalendarBindingNavigator)).EndInit();
+            this.oncall_CalendarBindingNavigator.ResumeLayout(false);
+            this.oncall_CalendarBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeOncallCalendarPBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,17 +372,29 @@
         private System.Windows.Forms.Button mainButton;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button switchButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox currentfirstTextBox;
-        private System.Windows.Forms.TextBox currentlastTextBox;
-        private System.Windows.Forms.TextBox newfirstTextBox;
-        private System.Windows.Forms.TextBox newlastTextBox;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox swtichmonthTextBox;
-        private System.Windows.Forms.TextBox switchyearTextBox;
-        private System.Windows.Forms.TextBox switchdayTextBox;
+        private Bus449_TestDataSet bus449_TestDataSet;
+        private Bus449_TestDataSetTableAdapters.EmployeeTableAdapter employeeTableAdapter;
+        private Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter oncall_CalendarTableAdapter;
+        private Bus449_TestDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingSource oncall_CalendarBindingSource;
+        private System.Windows.Forms.BindingNavigator oncall_CalendarBindingNavigator;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton oncall_CalendarBindingNavigatorSaveItem;
+        private System.Windows.Forms.DateTimePicker switchDateTimePicker;
+        private System.Windows.Forms.BindingSource employeeBindingSource;
+        private System.Windows.Forms.ComboBox l_NameComboBox;
+        private System.Windows.Forms.Label f_NameLabel1;
+        private System.Windows.Forms.BindingSource employeeOncallCalendarPBindingSource;
+        private System.Windows.Forms.ComboBox newlnameComboBox;
     }
 }
