@@ -45,7 +45,7 @@
             // 
             // mainButton
             // 
-            this.mainButton.Location = new System.Drawing.Point(194, 212);
+            this.mainButton.Location = new System.Drawing.Point(322, 203);
             this.mainButton.Name = "mainButton";
             this.mainButton.Size = new System.Drawing.Size(75, 23);
             this.mainButton.TabIndex = 0;
@@ -55,7 +55,7 @@
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(194, 258);
+            this.exitButton.Location = new System.Drawing.Point(322, 249);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 23);
             this.exitButton.TabIndex = 1;
@@ -86,7 +86,7 @@
             this.dateviewListBox.FormattingEnabled = true;
             this.dateviewListBox.Location = new System.Drawing.Point(16, 115);
             this.dateviewListBox.Name = "dateviewListBox";
-            this.dateviewListBox.Size = new System.Drawing.Size(150, 160);
+            this.dateviewListBox.Size = new System.Drawing.Size(272, 160);
             this.dateviewListBox.TabIndex = 16;
             // 
             // startDateTimePicker
@@ -107,7 +107,7 @@
             // 
             // viewButton
             // 
-            this.viewButton.Location = new System.Drawing.Point(194, 167);
+            this.viewButton.Location = new System.Drawing.Point(322, 158);
             this.viewButton.Name = "viewButton";
             this.viewButton.Size = new System.Drawing.Size(75, 23);
             this.viewButton.TabIndex = 19;
@@ -139,7 +139,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 301);
+            this.ClientSize = new System.Drawing.Size(424, 296);
             this.Controls.Add(this.viewButton);
             this.Controls.Add(this.endDateTimePicker);
             this.Controls.Add(this.startDateTimePicker);

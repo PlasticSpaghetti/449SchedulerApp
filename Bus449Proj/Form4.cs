@@ -48,14 +48,34 @@ namespace Bus449Proj
                 if(date >= start && date <= end)
                 {
                     int am, pm;
-                    string amlname, pmlname, amphone, pmphone;
+                    string amlname = "", pmlname = "", amphone = "", pmphone = "", amshift = "", pmshift = "";
 
                     int.TryParse(dr["empid_am"].ToString(), out am);
                     int.TryParse(dr["empid_pm"].ToString(), out pm);
-                    employee.GetDataByID(am);
                     
-                    string addam = date.ToString("MM/dd/yyyy") + " " + am.ToString();
-                    string addpm = date.ToString("MM/dd/yyyy") + " " + pm.ToString();
+                    foreach(DataRow dt in bus449_TestDataSet.Employee.Rows)
+                    {
+                        int check = int.Parse(dt["ID"].ToString());
+                        if (am == check)
+                        {
+                            amlname = dt["L_Name"].ToString();
+                            amphone = dt["phone"].ToString();
+                            amshift = dt["shift"].ToString();
+                        }
+                    }
+                    
+                    foreach (DataRow dz in bus449_TestDataSet.Employee.Rows)
+                    {
+                        int check2 = int.Parse(dz["ID"].ToString());
+                        if (pm == check2)
+                        {
+                            pmlname = dz["L_Name"].ToString();
+                            pmphone = dz["phone"].ToString();
+                            pmshift = dz["shift"].ToString();
+                        }
+                    }
+                    string addam = date.ToString("MM/dd/yyyy") + " " + amlname + " " + amphone + " " + amshift;
+                    string addpm = date.ToString("MM/dd/yyyy") + " " + pmlname + " " + pmphone + " " + pmshift;
 
                     dateviewListBox.Items.Add(addam);
                     dateviewListBox.Items.Add(addpm);
