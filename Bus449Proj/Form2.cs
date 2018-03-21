@@ -26,6 +26,11 @@ namespace Bus449Proj
             Application.Exit();
         }
 
+        private void startdateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            enddateTimePicker.MinDate = startdateTimePicker.Value;
+        }
+
         private void mainButton_Click(object sender, EventArgs e)
         {
             this.Hide();

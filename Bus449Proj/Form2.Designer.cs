@@ -143,15 +143,17 @@
             this.startdateTimePicker.Name = "startdateTimePicker";
             this.startdateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.startdateTimePicker.TabIndex = 17;
-            this.startdateTimePicker.Value = new System.DateTime(2018, 3, 13, 0, 0, 0, 0);
+            this.startdateTimePicker.Value = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
+            this.startdateTimePicker.ValueChanged += new System.EventHandler(this.startdateTimePicker_ValueChanged);
             // 
             // enddateTimePicker
             // 
             this.enddateTimePicker.Location = new System.Drawing.Point(77, 105);
+            this.enddateTimePicker.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
             this.enddateTimePicker.Name = "enddateTimePicker";
             this.enddateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.enddateTimePicker.TabIndex = 18;
-            this.enddateTimePicker.Value = new System.DateTime(2018, 3, 13, 0, 0, 0, 0);
+            this.enddateTimePicker.Value = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
             // 
             // holidayTimePicker
             // 
@@ -159,7 +161,7 @@
             this.holidayTimePicker.Name = "holidayTimePicker";
             this.holidayTimePicker.Size = new System.Drawing.Size(205, 20);
             this.holidayTimePicker.TabIndex = 19;
-            this.holidayTimePicker.Value = new System.DateTime(2018, 3, 13, 0, 0, 0, 0);
+            this.holidayTimePicker.Value = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
             // 
             // clearButton
             // 
