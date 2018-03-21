@@ -61,6 +61,7 @@
             this.f_NameLabel1 = new System.Windows.Forms.Label();
             this.employeeOncallCalendarPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.newlnameComboBox = new System.Windows.Forms.ComboBox();
+            this.employeeOncallCalendarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             date_IDLabel = new System.Windows.Forms.Label();
             l_NameLabel = new System.Windows.Forms.Label();
             f_NameLabel = new System.Windows.Forms.Label();
@@ -71,6 +72,7 @@
             this.oncall_CalendarBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeOncallCalendarPBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeOncallCalendarBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // date_IDLabel
@@ -305,7 +307,7 @@
             // l_NameComboBox
             // 
             this.l_NameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "L_Name", true));
-            this.l_NameComboBox.DataSource = this.employeeBindingSource;
+            this.l_NameComboBox.DataSource = this.employeeOncallCalendarBindingSource;
             this.l_NameComboBox.DisplayMember = "L_Name";
             this.l_NameComboBox.FormattingEnabled = true;
             this.l_NameComboBox.Location = new System.Drawing.Point(87, 43);
@@ -335,6 +337,11 @@
             this.newlnameComboBox.Size = new System.Drawing.Size(121, 21);
             this.newlnameComboBox.TabIndex = 14;
             // 
+            // employeeOncallCalendarBindingSource
+            // 
+            this.employeeOncallCalendarBindingSource.DataMember = "EmployeeOncall_Calendar";
+            this.employeeOncallCalendarBindingSource.DataSource = this.oncall_CalendarBindingSource;
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -362,6 +369,7 @@
             this.oncall_CalendarBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeOncallCalendarPBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeOncallCalendarBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -396,5 +404,6 @@
         private System.Windows.Forms.Label f_NameLabel1;
         private System.Windows.Forms.BindingSource employeeOncallCalendarPBindingSource;
         private System.Windows.Forms.ComboBox newlnameComboBox;
+        private System.Windows.Forms.BindingSource employeeOncallCalendarBindingSource;
     }
 }

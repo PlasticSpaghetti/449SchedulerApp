@@ -53,10 +53,46 @@ namespace Bus449Proj
 
         private void switchButton_Click(object sender, EventArgs e)
         {
+            int oldid = 0, newid = 0;
+            string oldname = l_NameComboBox.Text, newname = newlnameComboBox.Text;
+            
+            DateTime date = new DateTime();
+            date = switchDateTimePicker.Value;
+
+            foreach(DataRow dt in bus449_TestDataSet.Employee.Rows)
+            {
+                string check = "";
+                check = dt["L_Name"].ToString();
+                if(oldname == check)
+                {
+                    oldid = int.Parse(dt["ID"].ToString());
+                }
+                else if(newname == check)
+                {
+                    newid = int.Parse(dt["ID"].ToString());
+                }
+            }
             //creates usable adapter
             Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter oncall = new Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
 
- 
+            
+            foreach(DataRow dr in bus449_TestDataSet.Oncall_Calendar.Rows)
+            {
+                int am = 0, pm = 0;
+                bool holiday = bool.Parse(dr["holiday"].ToString());
+                string desc = dr["holiday_desc"].ToString();
+                am = int.Parse(dr["empid_am"].ToString());
+                pm = int.Parse(dr["empid_pm"].ToString());
+
+                if(am == oldid)
+                {
+                    oncall.Update(newid, pm, holiday, desc, date, oldid, pm, holiday, desc);
+                }
+                else if(pm == oldid)
+                {
+                    oncall.Update(am, newid, holiday, desc, date, oldid, pm, holiday, desc);
+                }
+            }
         }
     }
 }
