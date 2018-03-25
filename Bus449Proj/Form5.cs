@@ -94,5 +94,22 @@ namespace Bus449Proj
                 }
             }
         }
+
+        private void l_NameComboBox_TextChanged(object sender, EventArgs e)
+        {
+            newlnameComboBox.Items.Clear();
+            string current = l_NameComboBox.Text;
+            string tag ="";
+            foreach (DataRow dr in bus449_TestDataSet.Employee.Rows)
+            {
+                if (current == dr["L_Name"].ToString())
+                    tag = dr["shift"].ToString();
+            }
+            foreach(DataRow dt in bus449_TestDataSet.Employee.Rows)
+            {
+                if(tag == dt["shift"].ToString())
+                    newlnameComboBox.Items.Add(dt["L_Name"].ToString());
+            }
+        }
     }
 }
