@@ -37,11 +37,44 @@ namespace Bus449Proj
             // TODO: This line of code loads data into the 'bus449_TestDataSet.Employee' table. You can move, or remove it, as needed.
             this.employeeTableAdapter.Fill(this.bus449_TestDataSet.Employee);
 
-            foreach (DataRow dr in bus449_TestDataSet.Employee.Rows)
+            l_NameComboBox.Items.Clear();
+            DateTime date = new DateTime();
+            date = switchDateTimePicker.Value;
+
+            foreach (DataRow dr in bus449_TestDataSet.Oncall_Calendar.Rows)
             {
-                newlnameComboBox.Items.Add(dr["L_Name"].ToString());
+                DateTime check = new DateTime();
+                check = DateTime.Parse(dr["Date_ID"].ToString());
+
+                if (check == date)
+                {
+                    int am, pm;
+                    int.TryParse(dr["empid_am"].ToString(), out am);
+                    int.TryParse(dr["empid_pm"].ToString(), out pm);
+                    string amlname = "", pmlname = "";
+                    foreach (DataRow dt in bus449_TestDataSet.Employee.Rows)
+                    {
+                        int check1 = int.Parse(dt["ID"].ToString());
+                        if (am == check1)
+                        {
+                            amlname = dt["L_Name"].ToString();
+                            l_NameComboBox.Items.Add(amlname);
+                        }
+                    }
+
+                    foreach (DataRow dz in bus449_TestDataSet.Employee.Rows)
+                    {
+                        int check2 = int.Parse(dz["ID"].ToString());
+                        if (pm == check2)
+                        {
+                            pmlname = dz["L_Name"].ToString();
+                            l_NameComboBox.Items.Add(pmlname);
+                        }
+                    }
+
+                }
             }
-         }
+        }
 
         private void oncall_CalendarBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -100,16 +133,65 @@ namespace Bus449Proj
             newlnameComboBox.Items.Clear();
             string current = l_NameComboBox.Text;
             string tag ="";
+            string fname = "";
             foreach (DataRow dr in bus449_TestDataSet.Employee.Rows)
             {
                 if (current == dr["L_Name"].ToString())
+                {
                     tag = dr["shift"].ToString();
+                    fname = dr["F_Name"].ToString();
+                    f_NameLabel1.Text = fname;
+                }
             }
             foreach(DataRow dt in bus449_TestDataSet.Employee.Rows)
             {
                 if(tag == dt["shift"].ToString())
                     newlnameComboBox.Items.Add(dt["L_Name"].ToString());
             }
+        }
+
+        private void switchDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            l_NameComboBox.Items.Clear();
+            DateTime date = new DateTime();
+            date = switchDateTimePicker.Value;
+            string amlname = "", pmlname = "";
+
+            foreach (DataRow dr in bus449_TestDataSet.Oncall_Calendar.Rows)
+            {
+                DateTime check = new DateTime();
+                check = DateTime.Parse(dr["Date_ID"].ToString());
+
+                if(check == date)
+                {
+                    int am, pm;
+                    int.TryParse(dr["empid_am"].ToString(), out am);
+                    int.TryParse(dr["empid_pm"].ToString(), out pm);
+                    
+                    foreach (DataRow dt in bus449_TestDataSet.Employee.Rows)
+                    {
+                        int check1 = int.Parse(dt["ID"].ToString());
+                        if (am == check1)
+                        {
+                            amlname = dt["L_Name"].ToString();
+                            l_NameComboBox.Items.Add(amlname);
+                        }
+                    }
+
+                    foreach (DataRow dz in bus449_TestDataSet.Employee.Rows)
+                    {
+                        int check2 = int.Parse(dz["ID"].ToString());
+                        if (pm == check2)
+                        {
+                            pmlname = dz["L_Name"].ToString();
+                            l_NameComboBox.Items.Add(pmlname);
+                        }
+                    }
+                    
+                }
+            }
+            l_NameComboBox.Text = amlname;
+
         }
     }
 }

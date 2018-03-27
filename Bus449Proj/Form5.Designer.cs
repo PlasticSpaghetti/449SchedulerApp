@@ -298,6 +298,7 @@
             this.switchDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.switchDateTimePicker.TabIndex = 5;
             this.switchDateTimePicker.Value = new System.DateTime(2018, 3, 20, 0, 0, 0, 0);
+            this.switchDateTimePicker.ValueChanged += new System.EventHandler(this.switchDateTimePicker_ValueChanged);
             // 
             // employeeBindingSource
             // 
@@ -307,8 +308,6 @@
             // l_NameComboBox
             // 
             this.l_NameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "L_Name", true));
-            this.l_NameComboBox.DataSource = this.employeeBindingSource;
-            this.l_NameComboBox.DisplayMember = "L_Name";
             this.l_NameComboBox.FormattingEnabled = true;
             this.l_NameComboBox.Location = new System.Drawing.Point(87, 43);
             this.l_NameComboBox.Name = "l_NameComboBox";
