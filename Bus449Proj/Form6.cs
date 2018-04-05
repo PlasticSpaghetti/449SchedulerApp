@@ -93,19 +93,19 @@ namespace Bus449Proj
                 if(add == true)
                 {
                     int holicount = 0, x = 0;
-                    int checker = int.Parse(iDComboBox.Text);
+                    string checker = shiftComboBox.ToString();
                     foreach (DataRow dr in bus449_TestDataSet.Oncall_Calendar.Rows)
                     {
                         if (update.Date <= DateTime.Parse(dr["Date_ID"].ToString()).Date)
                         {
                             //weights holidays
-                            if (checker == int.Parse(dr["empid_am"].ToString()) && bool.Parse(dr["holiday"].ToString()))
+                            if (checker == "A" && bool.Parse(dr["holiday"].ToString()))
                             {
                                 oncall.Update(empam[holicount], int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString(),
                                     DateTime.Parse(dr["Date_ID"].ToString()), delid, int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString());
                                 holicount++;
                             }
-                            if (checker == int.Parse(dr["empid_pm"].ToString()) && bool.Parse(dr["holiday"].ToString()))
+                            if (checker == "P" && bool.Parse(dr["holiday"].ToString()))
                             {
                                 oncall.Update(int.Parse(dr["empid_am"].ToString()), emppm[holicount], bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString(),
                                     DateTime.Parse(dr["Date_ID"].ToString()), int.Parse(dr["empid_am"].ToString()), delid, bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString());
@@ -116,13 +116,13 @@ namespace Bus449Proj
                                 holicount = 0;
                             }
                             //does the other days
-                            if (checker == int.Parse(dr["empid_am"].ToString()) && !bool.Parse(dr["holiday"].ToString()))
+                            if (checker == "A" && !bool.Parse(dr["holiday"].ToString()))
                             {
                                 oncall.Update(empam[x], int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString(),
                                     DateTime.Parse(dr["Date_ID"].ToString()), delid, int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString());
                                 x++;
                             }
-                            if (checker == int.Parse(dr["empid_pm"].ToString()) && !bool.Parse(dr["holiday"].ToString()))
+                            if (checker == "P" && !bool.Parse(dr["holiday"].ToString()))
                             {
                                 oncall.Update(int.Parse(dr["empid_am"].ToString()), emppm[x], bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString(),
                                     DateTime.Parse(dr["Date_ID"].ToString()), int.Parse(dr["empid_am"].ToString()), delid, bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString());
@@ -136,12 +136,53 @@ namespace Bus449Proj
                     }
 
                 }
-                    
-                        
+                if(shift == true)
+                {
+                    int holicounta = 0, holicountp = 0, x = 0, y =0;
+                    string checker = shiftComboBox.ToString();
+                    foreach (DataRow dr in bus449_TestDataSet.Oncall_Calendar.Rows)
+                    {
+                        if (update.Date <= DateTime.Parse(dr["Date_ID"].ToString()).Date)
+                        {
+                            if (bool.Parse(dr["holiday"].ToString()))
+                            {
+                                oncall.Update(empam[holicounta], int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString(),
+                                    DateTime.Parse(dr["Date_ID"].ToString()), delid, int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString());
+                                holicounta++;
+                                oncall.Update(empam[holicountp], int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString(),
+                                    DateTime.Parse(dr["Date_ID"].ToString()), delid, int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString());
+                                holicountp++;
+                            }
+                            else
+                            {
+                                oncall.Update(empam[x], int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString(),
+                                    DateTime.Parse(dr["Date_ID"].ToString()), delid, int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString());
+                                x++;
+                                oncall.Update(empam[y], int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString(),
+                                    DateTime.Parse(dr["Date_ID"].ToString()), delid, int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString());
+                                y++;
+                            }
+                            
+                            if (x >= empam.Length)
+                            {
+                                x = 0;
+                            }
+                            if (y >= emppm.Length)
+                            {
+                                y = 0;
+                            }
 
-                    
-
-                
+                            if (holicounta >= empam.Length)
+                            {
+                                holicounta = 0;
+                            }
+                            if (holicountp >= emppm.Length)
+                            {
+                                holicountp = 0;
+                            }
+                        }
+                    }
+                }                   
             }
 
             
