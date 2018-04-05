@@ -12,11 +12,16 @@ namespace Bus449Proj
 {
     public partial class Form8 : Form
     {
+        public bool good = false;
         public DateTime change = new DateTime();
 
         public DateTime getDate()
         {
             return change.Date;
+        }
+        public Boolean getOK()
+        {
+            return good;
         }
 
         public Form8()
@@ -27,6 +32,7 @@ namespace Bus449Proj
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
+            good = false;
         }
 
         private void oncall_CalendarBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -40,7 +46,9 @@ namespace Bus449Proj
         private void okButton_Click(object sender, EventArgs e)
         {
             change = date_IDDateTimePicker.Value;
+            good = true;
         }
+        
         
     }
    

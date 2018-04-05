@@ -37,9 +37,10 @@ namespace Bus449Proj
 
         private void employeeBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
+
             
 
-            foreach(DataRow dr in bus449_TestDataSet.Employee.Rows)
+            foreach (DataRow dr in bus449_TestDataSet.Employee.Rows)
             {
                 if(shiftComboBox.Text != dr["shift"].ToString())
                 {
@@ -55,7 +56,7 @@ namespace Bus449Proj
                 DateTime update = new DateTime();
                 var form2 = new Form8();
                 form2.Show();
-
+                
                 //gets the date from the popup form
                 update = form2.getDate();
 
@@ -63,45 +64,99 @@ namespace Bus449Proj
                 Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter oncall = new Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
 
                 //crazy chunk of code to auto-update upon deletion of an employee
-                if (delete == true)
+                    if (delete == true)
+                    {
+                        int count = 0;
+                        foreach (DataRow dr in bus449_TestDataSet.Oncall_Calendar.Rows)
+                        {
+                            if (update.Date <= DateTime.Parse(dr["Date_ID"].ToString()).Date)
+                            {
+                                if (delid == int.Parse(dr["empid_am"].ToString()))
+                                {
+                                    oncall.Update(empam[count], int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString(),
+                                        DateTime.Parse(dr["Date_ID"].ToString()), delid, int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString());
+                                    count++;
+                                }
+                                if (delid == int.Parse(dr["empid_pm"].ToString()))
+                                {
+                                    oncall.Update(int.Parse(dr["empid_am"].ToString()), emppm[count], bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString(),
+                                        DateTime.Parse(dr["Date_ID"].ToString()), int.Parse(dr["empid_am"].ToString()), delid, bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString());
+                                    count++;
+                                }
+                                if (count >= empam.Length || count >= emppm.Length)
+                                {
+                                    count = 0;
+                                }
+                            }
+                        }
+                    }
+                if(add == true)
                 {
-                    int count = 0;
+                    int holicount = 0, x = 0;
+                    int checker = int.Parse(iDComboBox.Text);
                     foreach (DataRow dr in bus449_TestDataSet.Oncall_Calendar.Rows)
                     {
                         if (update.Date <= DateTime.Parse(dr["Date_ID"].ToString()).Date)
                         {
-                            if (delid == int.Parse(dr["empid_am"].ToString()))
+                            //weights holidays
+                            if (checker == int.Parse(dr["empid_am"].ToString()) && bool.Parse(dr["holiday"].ToString()))
                             {
-                                oncall.Update(empam[count], int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString(),
+                                oncall.Update(empam[holicount], int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString(),
                                     DateTime.Parse(dr["Date_ID"].ToString()), delid, int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString());
-                                count++;
+                                holicount++;
                             }
-                            if (delid == int.Parse(dr["empid_am"].ToString()))
+                            if (checker == int.Parse(dr["empid_pm"].ToString()) && bool.Parse(dr["holiday"].ToString()))
                             {
-                                oncall.Update(int.Parse(dr["empid_am"].ToString()), emppm[count], bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString(),
+                                oncall.Update(int.Parse(dr["empid_am"].ToString()), emppm[holicount], bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString(),
                                     DateTime.Parse(dr["Date_ID"].ToString()), int.Parse(dr["empid_am"].ToString()), delid, bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString());
-                                count++;
+                                holicount++;
                             }
-                            if (count >= empam.Length || count >= emppm.Length)
+                            if (holicount >= empam.Length || holicount >= emppm.Length)
                             {
-                                count = 0;
+                                holicount = 0;
+                            }
+                            //does the other days
+                            if (checker == int.Parse(dr["empid_am"].ToString()) && !bool.Parse(dr["holiday"].ToString()))
+                            {
+                                oncall.Update(empam[x], int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString(),
+                                    DateTime.Parse(dr["Date_ID"].ToString()), delid, int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString());
+                                x++;
+                            }
+                            if (checker == int.Parse(dr["empid_pm"].ToString()) && !bool.Parse(dr["holiday"].ToString()))
+                            {
+                                oncall.Update(int.Parse(dr["empid_am"].ToString()), emppm[x], bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString(),
+                                    DateTime.Parse(dr["Date_ID"].ToString()), int.Parse(dr["empid_am"].ToString()), delid, bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString());
+                                x++;
+                            }
+                            if (x >= empam.Length || x >= emppm.Length)
+                            {
+                                x = 0;
                             }
                         }
                     }
+
                 }
+                    
+                        
+
+                    
+
+                
             }
-            //saves any changes made to an employee
-            try
-            {
-                this.Validate();
-                this.employeeBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.bus449_TestDataSet);
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message, "Error Message", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-            }
-           
+
+            
+                //saves any changes made to an employee
+                try
+                {
+                    this.Validate();
+                    this.employeeBindingSource.EndEdit();
+                    this.tableAdapterManager.UpdateAll(this.bus449_TestDataSet);
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show(err.Message, "Error Message", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                }
+            
 
         }
 
