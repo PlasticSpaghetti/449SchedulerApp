@@ -39,14 +39,6 @@ namespace Bus449Proj
         {
 
             
-
-            foreach (DataRow dr in bus449_TestDataSet.Employee.Rows)
-            {
-                if(shiftComboBox.Text != dr["shift"].ToString())
-                {
-                    shift = true;
-                }
-            }
             if (delete == true || add == true || shift == true)
             {
                 int[] empam, emppm;
@@ -66,30 +58,31 @@ namespace Bus449Proj
                 //crazy chunk of code to auto-update upon deletion of an employee
                     if (delete == true)
                     {
-                        int count = 0;
-                        foreach (DataRow dr in bus449_TestDataSet.Oncall_Calendar.Rows)
+
+                    int count = 0;
+                    foreach (DataRow dr in bus449_TestDataSet.Oncall_Calendar.Rows)
+                    {
+                        if (update.Date <= DateTime.Parse(dr["Date_ID"].ToString()).Date)
                         {
-                            if (update.Date <= DateTime.Parse(dr["Date_ID"].ToString()).Date)
+                            if (delid == int.Parse(dr["empid_am"].ToString()))
                             {
-                                if (delid == int.Parse(dr["empid_am"].ToString()))
-                                {
-                                    oncall.Update(empam[count], int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString(),
-                                        DateTime.Parse(dr["Date_ID"].ToString()), delid, int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString());
-                                    count++;
-                                }
-                                if (delid == int.Parse(dr["empid_pm"].ToString()))
-                                {
-                                    oncall.Update(int.Parse(dr["empid_am"].ToString()), emppm[count], bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString(),
-                                        DateTime.Parse(dr["Date_ID"].ToString()), int.Parse(dr["empid_am"].ToString()), delid, bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString());
-                                    count++;
-                                }
-                                if (count >= empam.Length || count >= emppm.Length)
-                                {
-                                    count = 0;
-                                }
+                                oncall.Update(empam[count], int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString(),
+                                    DateTime.Parse(dr["Date_ID"].ToString()), delid, int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString());
+                                count++;
+                            }
+                            if (delid == int.Parse(dr["empid_pm"].ToString()))
+                            {
+                                oncall.Update(int.Parse(dr["empid_am"].ToString()), emppm[count], bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString(),
+                                    DateTime.Parse(dr["Date_ID"].ToString()), int.Parse(dr["empid_am"].ToString()), delid, bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString());
+                                count++;
+                            }
+                            if (count >= empam.Length || count >= emppm.Length)
+                            {
+                                count = 0;
                             }
                         }
                     }
+                }
                 if(add == true)
                 {
                     int holicount = 0, x = 0;
@@ -134,6 +127,7 @@ namespace Bus449Proj
                             }
                         }
                     }
+                    this.tableAdapterManager.UpdateAll(this.bus449_TestDataSet);
 
                 }
                 if(shift == true)
@@ -181,23 +175,24 @@ namespace Bus449Proj
                                 holicountp = 0;
                             }
                         }
+                        this.tableAdapterManager.UpdateAll(this.bus449_TestDataSet);
                     }
                 }                   
             }
+            //saves any changes made to an employee
+            try
+            {
+                this.Validate();
+                this.employeeBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.bus449_TestDataSet);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Error Message", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+            }
 
-            
-                //saves any changes made to an employee
-                try
-                {
-                    this.Validate();
-                    this.employeeBindingSource.EndEdit();
-                    this.tableAdapterManager.UpdateAll(this.bus449_TestDataSet);
-                }
-                catch (Exception err)
-                {
-                    MessageBox.Show(err.Message, "Error Message", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-                }
-            
+
+
 
         }
 
@@ -210,6 +205,29 @@ namespace Bus449Proj
 
         }
 
+        private void shiftComboBox_TextChanged(object sender, EventArgs e)
+        {
+            /*foreach (DataRow dr in bus449_TestDataSet.Employee.Rows)
+            {
+                string check = dr["shift"].ToString();
+                if (int.Parse(iDComboBox.ToString()) == int.Parse(dr["ID"].ToString()) && shiftComboBox.Text != check)
+                {
+                    shift = true;
+
+                }
+                else
+                    shift = false;
+            }*/
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            delete = true;
+            delid = int.Parse(iDTextBox.Text);
+            delshift = shiftComboBox.Text;
+
+        }
+
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
             add = true;
@@ -218,8 +236,56 @@ namespace Bus449Proj
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
             delete = true;
-            delid = int.Parse(iDComboBox.Text);
+            delid = int.Parse(iDTextBox.Text);
             delshift = shiftComboBox.Text;
+
+            int[] empam, emppm;
+            empam = new int[(int)this.employeeTableAdapter.AMCount()];
+            emppm = new int[(int)this.employeeTableAdapter.AMCount()];
+
+            DateTime update = new DateTime();
+            var form2 = new Form8();
+            form2.Show();
+
+            //gets the date from the popup form
+            update = form2.getDate();
+
+            //creates usable adapter
+            Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter oncall = new Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
+
+            int count = 0;
+            foreach (DataRow dr in bus449_TestDataSet.Oncall_Calendar.Rows)
+            {
+                if (update.Date <= DateTime.Parse(dr["Date_ID"].ToString()).Date)
+                {
+                    if (delid == int.Parse(dr["empid_am"].ToString()))
+                    {
+                        oncall.Update(empam[count], int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString(),
+                            DateTime.Parse(dr["Date_ID"].ToString()), delid, int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString());
+                        count++;
+                    }
+                    if (delid == int.Parse(dr["empid_pm"].ToString()))
+                    {
+                        oncall.Update(int.Parse(dr["empid_am"].ToString()), emppm[count], bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString(),
+                            DateTime.Parse(dr["Date_ID"].ToString()), int.Parse(dr["empid_am"].ToString()), delid, bool.Parse(dr["holiday"].ToString()), dr["desc"].ToString());
+                        count++;
+                    }
+                    if (count >= empam.Length || count >= emppm.Length)
+                    {
+                        count = 0;
+                    }
+                }
+            }
+            //saves any changes made to an employee
+            
+                this.Validate();
+                this.employeeBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.bus449_TestDataSet);
+            
+            //catch (Exception err)
+            //{
+            //    MessageBox.Show(err.Message, "Error Message", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+            //}
         }
 
     }

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label iDLabel;
             System.Windows.Forms.Label f_NameLabel;
             System.Windows.Forms.Label l_NameLabel;
             System.Windows.Forms.Label emailLabel;
             System.Windows.Forms.Label phoneLabel;
             System.Windows.Forms.Label shiftLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form6));
+            System.Windows.Forms.Label iDLabel;
             this.mainButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.bus449_TestDataSet = new Bus449Proj.Bus449_TestDataSet();
@@ -54,7 +54,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.employeeBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.iDComboBox = new System.Windows.Forms.ComboBox();
             this.f_NameTextBox = new System.Windows.Forms.TextBox();
             this.l_NameTextBox = new System.Windows.Forms.TextBox();
             this.emailTextBox = new System.Windows.Forms.TextBox();
@@ -62,26 +61,19 @@
             this.shiftComboBox = new System.Windows.Forms.ComboBox();
             this.oncall_CalendarTableAdapter = new Bus449Proj.Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
             this.tableAdapterManager = new Bus449Proj.Bus449_TestDataSetTableAdapters.TableAdapterManager();
-            iDLabel = new System.Windows.Forms.Label();
+            this.iDTextBox = new System.Windows.Forms.TextBox();
+            this.deleteButton = new System.Windows.Forms.Button();
             f_NameLabel = new System.Windows.Forms.Label();
             l_NameLabel = new System.Windows.Forms.Label();
             emailLabel = new System.Windows.Forms.Label();
             phoneLabel = new System.Windows.Forms.Label();
             shiftLabel = new System.Windows.Forms.Label();
+            iDLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bus449_TestDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingNavigator)).BeginInit();
             this.employeeBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // iDLabel
-            // 
-            iDLabel.AutoSize = true;
-            iDLabel.Location = new System.Drawing.Point(34, 63);
-            iDLabel.Name = "iDLabel";
-            iDLabel.Size = new System.Drawing.Size(21, 13);
-            iDLabel.TabIndex = 3;
-            iDLabel.Text = "ID:";
             // 
             // f_NameLabel
             // 
@@ -286,17 +278,6 @@
             this.employeeBindingNavigatorSaveItem.Text = "Save Data";
             this.employeeBindingNavigatorSaveItem.Click += new System.EventHandler(this.employeeBindingNavigatorSaveItem_Click);
             // 
-            // iDComboBox
-            // 
-            this.iDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "ID", true));
-            this.iDComboBox.DataSource = this.employeeBindingSource;
-            this.iDComboBox.DisplayMember = "ID";
-            this.iDComboBox.FormattingEnabled = true;
-            this.iDComboBox.Location = new System.Drawing.Point(96, 55);
-            this.iDComboBox.Name = "iDComboBox";
-            this.iDComboBox.Size = new System.Drawing.Size(95, 21);
-            this.iDComboBox.TabIndex = 4;
-            // 
             // f_NameTextBox
             // 
             this.f_NameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "F_Name", true));
@@ -340,6 +321,7 @@
             this.shiftComboBox.Name = "shiftComboBox";
             this.shiftComboBox.Size = new System.Drawing.Size(100, 21);
             this.shiftComboBox.TabIndex = 14;
+            this.shiftComboBox.TextChanged += new System.EventHandler(this.shiftComboBox_TextChanged);
             // 
             // oncall_CalendarTableAdapter
             // 
@@ -348,16 +330,45 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.EmployeeTableAdapter = null;
-            this.tableAdapterManager.Oncall_CalendarTableAdapter = null;
+            this.tableAdapterManager.EmployeeTableAdapter = this.employeeTableAdapter;
+            this.tableAdapterManager.Oncall_CalendarTableAdapter = this.oncall_CalendarTableAdapter;
             this.tableAdapterManager.UpdateOrder = Bus449Proj.Bus449_TestDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // iDLabel
+            // 
+            iDLabel.AutoSize = true;
+            iDLabel.Location = new System.Drawing.Point(34, 61);
+            iDLabel.Name = "iDLabel";
+            iDLabel.Size = new System.Drawing.Size(21, 13);
+            iDLabel.TabIndex = 14;
+            iDLabel.Text = "ID:";
+            // 
+            // iDTextBox
+            // 
+            this.iDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "ID", true));
+            this.iDTextBox.Location = new System.Drawing.Point(96, 58);
+            this.iDTextBox.Name = "iDTextBox";
+            this.iDTextBox.Size = new System.Drawing.Size(100, 20);
+            this.iDTextBox.TabIndex = 15;
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(260, 165);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.TabIndex = 16;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(381, 334);
+            this.Controls.Add(this.deleteButton);
+            this.Controls.Add(iDLabel);
+            this.Controls.Add(this.iDTextBox);
             this.Controls.Add(shiftLabel);
             this.Controls.Add(this.shiftComboBox);
             this.Controls.Add(phoneLabel);
@@ -368,8 +379,6 @@
             this.Controls.Add(this.l_NameTextBox);
             this.Controls.Add(f_NameLabel);
             this.Controls.Add(this.f_NameTextBox);
-            this.Controls.Add(iDLabel);
-            this.Controls.Add(this.iDComboBox);
             this.Controls.Add(this.employeeBindingNavigator);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.mainButton);
@@ -412,7 +421,8 @@
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.TextBox phoneTextBox;
         private System.Windows.Forms.ComboBox shiftComboBox;
-        private System.Windows.Forms.ComboBox iDComboBox;
         private Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter oncall_CalendarTableAdapter;
+        private System.Windows.Forms.TextBox iDTextBox;
+        private System.Windows.Forms.Button deleteButton;
     }
 }
