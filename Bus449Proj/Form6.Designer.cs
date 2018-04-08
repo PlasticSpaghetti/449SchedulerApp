@@ -34,8 +34,8 @@
             System.Windows.Forms.Label emailLabel;
             System.Windows.Forms.Label phoneLabel;
             System.Windows.Forms.Label shiftLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form6));
             System.Windows.Forms.Label iDLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form6));
             this.mainButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.bus449_TestDataSet = new Bus449Proj.Bus449_TestDataSet();
@@ -63,6 +63,7 @@
             this.tableAdapterManager = new Bus449Proj.Bus449_TestDataSetTableAdapters.TableAdapterManager();
             this.iDTextBox = new System.Windows.Forms.TextBox();
             this.deleteButton = new System.Windows.Forms.Button();
+            this.addsaveButton = new System.Windows.Forms.Button();
             f_NameLabel = new System.Windows.Forms.Label();
             l_NameLabel = new System.Windows.Forms.Label();
             emailLabel = new System.Windows.Forms.Label();
@@ -119,6 +120,15 @@
             shiftLabel.Size = new System.Drawing.Size(31, 13);
             shiftLabel.TabIndex = 13;
             shiftLabel.Text = "Shift:";
+            // 
+            // iDLabel
+            // 
+            iDLabel.AutoSize = true;
+            iDLabel.Location = new System.Drawing.Point(34, 61);
+            iDLabel.Name = "iDLabel";
+            iDLabel.Size = new System.Drawing.Size(21, 13);
+            iDLabel.TabIndex = 14;
+            iDLabel.Text = "ID:";
             // 
             // mainButton
             // 
@@ -334,15 +344,6 @@
             this.tableAdapterManager.Oncall_CalendarTableAdapter = this.oncall_CalendarTableAdapter;
             this.tableAdapterManager.UpdateOrder = Bus449Proj.Bus449_TestDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // iDLabel
-            // 
-            iDLabel.AutoSize = true;
-            iDLabel.Location = new System.Drawing.Point(34, 61);
-            iDLabel.Name = "iDLabel";
-            iDLabel.Size = new System.Drawing.Size(21, 13);
-            iDLabel.TabIndex = 14;
-            iDLabel.Text = "ID:";
-            // 
             // iDTextBox
             // 
             this.iDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "ID", true));
@@ -361,11 +362,22 @@
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
+            // addsaveButton
+            // 
+            this.addsaveButton.Location = new System.Drawing.Point(260, 117);
+            this.addsaveButton.Name = "addsaveButton";
+            this.addsaveButton.Size = new System.Drawing.Size(75, 23);
+            this.addsaveButton.TabIndex = 17;
+            this.addsaveButton.Text = "Save New Employee";
+            this.addsaveButton.UseVisualStyleBackColor = true;
+            this.addsaveButton.Click += new System.EventHandler(this.addsaveButton_Click);
+            // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(381, 334);
+            this.Controls.Add(this.addsaveButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(iDLabel);
             this.Controls.Add(this.iDTextBox);
@@ -424,5 +436,6 @@
         private Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter oncall_CalendarTableAdapter;
         private System.Windows.Forms.TextBox iDTextBox;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Button addsaveButton;
     }
 }
