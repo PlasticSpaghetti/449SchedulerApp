@@ -64,6 +64,7 @@
             this.iDTextBox = new System.Windows.Forms.TextBox();
             this.deleteButton = new System.Windows.Forms.Button();
             this.addsaveButton = new System.Windows.Forms.Button();
+            this.shiftButton = new System.Windows.Forms.Button();
             f_NameLabel = new System.Windows.Forms.Label();
             l_NameLabel = new System.Windows.Forms.Label();
             emailLabel = new System.Windows.Forms.Label();
@@ -372,11 +373,22 @@
             this.addsaveButton.UseVisualStyleBackColor = true;
             this.addsaveButton.Click += new System.EventHandler(this.addsaveButton_Click);
             // 
+            // shiftButton
+            // 
+            this.shiftButton.Location = new System.Drawing.Point(260, 71);
+            this.shiftButton.Name = "shiftButton";
+            this.shiftButton.Size = new System.Drawing.Size(75, 23);
+            this.shiftButton.TabIndex = 18;
+            this.shiftButton.Text = "Shift Change";
+            this.shiftButton.UseVisualStyleBackColor = true;
+            this.shiftButton.Click += new System.EventHandler(this.shiftButton_Click);
+            // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(381, 334);
+            this.Controls.Add(this.shiftButton);
             this.Controls.Add(this.addsaveButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(iDLabel);
@@ -437,5 +449,6 @@
         private System.Windows.Forms.TextBox iDTextBox;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button addsaveButton;
+        private System.Windows.Forms.Button shiftButton;
     }
 }
