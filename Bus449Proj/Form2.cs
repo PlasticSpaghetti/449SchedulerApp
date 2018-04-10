@@ -49,8 +49,7 @@ namespace Bus449Proj
 
             holiname = holiday_descTextBox.Text;
 
-            //adds the holiday date to the listbox
-            holidaysListBox.Items.Add(day.Date + " " + holiname);
+           
             
             Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter oncall = new Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
             int x =0, y = 0;
@@ -71,10 +70,14 @@ namespace Bus449Proj
             int count = 0;
             count = (int)oncall.ScalarCheck(day.Date);
             if (count <= 0)
+            {
                 //inserts the holiday into the calendar with employees
                 oncall.Insert(day.Date, holia[a], holip[p], holiday, holiname);
+                //adds the holiday date to the listbox
+                holidaysListBox.Items.Add(day.Date + " " + holiname);
+            }
 
-                a++; p++;
+            a++; p++;
 
                 if (a >= holia.Length)
                     a = 0;

@@ -328,6 +328,7 @@ namespace Bus449Proj
             {
                 empam = new int[la+1];
                 checker = "A";
+                //empam[empam.Length - 1] = int.Parse(iDTextBox.Text);
             }
             else
                 empam = new int[la];
@@ -336,6 +337,7 @@ namespace Bus449Proj
             {
                 emppm = new int[lp+1];
                 checker = "P";
+                //emppm[emppm.Length - 1] = int.Parse(iDTextBox.Text)
             }
             else
                 emppm = new int[lp];
