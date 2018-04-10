@@ -68,7 +68,9 @@ namespace Bus449Proj
                 }
 
             }
-
+            int count = 0;
+            count = (int)oncall.ScalarCheck(day.Date);
+            if (count <= 0)
                 //inserts the holiday into the calendar with employees
                 oncall.Insert(day.Date, holia[a], holip[p], holiday, holiname);
 
@@ -176,6 +178,18 @@ namespace Bus449Proj
             //populates regular loop arrays
             amid = new int[amemps];
             pmid = new int[pmemps];
+
+            foreach(DataRow dr in bus449_TestDataSet.Oncall_Calendar.Rows)
+            {
+                string holiday;
+                DateTime holidate;
+                if (bool.Parse(dr["holiday"].ToString()))
+                {
+                    holiday = dr["holiday_desc"].ToString();
+                    holidate = DateTime.Parse(dr["Date_ID"].ToString());
+                    holidaysListBox.Items.Add(holiday + " " + holidate.ToString("MM/dd/yyyy"));
+                }
+            }
 
           
         }
