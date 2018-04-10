@@ -34,6 +34,7 @@
             System.Windows.Forms.Label f_NameLabel;
             System.Windows.Forms.Label l_NameLabel1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
+            System.Windows.Forms.Label label1;
             this.mainButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.switchButton = new System.Windows.Forms.Button();
@@ -62,10 +63,12 @@
             this.f_NameLabel1 = new System.Windows.Forms.Label();
             this.employeeOncallCalendarPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.newlnameComboBox = new System.Windows.Forms.ComboBox();
+            this.fnameLabel2 = new System.Windows.Forms.Label();
             date_IDLabel = new System.Windows.Forms.Label();
             l_NameLabel = new System.Windows.Forms.Label();
             f_NameLabel = new System.Windows.Forms.Label();
             l_NameLabel1 = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bus449_TestDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oncall_CalendarBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oncall_CalendarBindingNavigator)).BeginInit();
@@ -341,12 +344,32 @@
             this.newlnameComboBox.Name = "newlnameComboBox";
             this.newlnameComboBox.Size = new System.Drawing.Size(121, 21);
             this.newlnameComboBox.TabIndex = 14;
+            this.newlnameComboBox.TextChanged += new System.EventHandler(this.newlnameComboBox_TextChanged);
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(321, 82);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(47, 13);
+            label1.TabIndex = 15;
+            label1.Text = "F Name:";
+            // 
+            // fnameLabel2
+            // 
+            this.fnameLabel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fnameLabel2.Location = new System.Drawing.Point(374, 81);
+            this.fnameLabel2.Name = "fnameLabel2";
+            this.fnameLabel2.Size = new System.Drawing.Size(100, 23);
+            this.fnameLabel2.TabIndex = 16;
             // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(598, 278);
+            this.Controls.Add(label1);
+            this.Controls.Add(this.fnameLabel2);
             this.Controls.Add(this.newlnameComboBox);
             this.Controls.Add(l_NameLabel1);
             this.Controls.Add(f_NameLabel);
@@ -405,5 +428,6 @@
         private System.Windows.Forms.BindingSource employeeOncallCalendarPBindingSource;
         private System.Windows.Forms.ComboBox newlnameComboBox;
         private System.Windows.Forms.BindingSource employeeOncallCalendarBindingSource;
+        private System.Windows.Forms.Label fnameLabel2;
     }
 }

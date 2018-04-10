@@ -193,5 +193,20 @@ namespace Bus449Proj
             l_NameComboBox.Text = amlname;
 
         }
+
+        private void newlnameComboBox_TextChanged(object sender, EventArgs e)
+        {
+            fnameLabel2.Text = "";
+            string current2 = newlnameComboBox.Text;
+            string fname2 = "";
+            foreach (DataRow dr in bus449_TestDataSet.Employee.Rows)
+            {
+                if (current2 == dr["L_Name"].ToString())
+                {
+                    fname2 = dr["F_Name"].ToString();
+                    fnameLabel2.Text = fname2;
+                }
+            }
+        }
     }
 }

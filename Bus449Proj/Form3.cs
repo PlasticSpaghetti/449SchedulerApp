@@ -33,6 +33,7 @@ namespace Bus449Proj
 
         private void viewButton_Click(object sender, EventArgs e)
         {
+            datesListBox.Items.Clear();
 
             int id;
             int.TryParse(iDLabel1.Text, out id);

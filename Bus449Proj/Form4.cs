@@ -32,6 +32,8 @@ namespace Bus449Proj
 
         private void viewButton_Click(object sender, EventArgs e)
         {
+            dateviewListBox.Items.Clear();
+
             DateTime start = new DateTime();
             DateTime end = new DateTime();
             start = startDateTimePicker.Value;
