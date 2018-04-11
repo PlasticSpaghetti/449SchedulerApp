@@ -407,6 +407,7 @@
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.mainButton);
             this.Name = "Form6";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Employees";
             this.Load += new System.EventHandler(this.Form6_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bus449_TestDataSet)).EndInit();

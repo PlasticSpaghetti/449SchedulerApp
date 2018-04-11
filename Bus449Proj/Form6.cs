@@ -191,7 +191,7 @@ namespace Bus449Proj
             //creates usable adapter
             Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter oncall = new Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
 
-            int holicount = 0, x = 0, y =0;
+            int holicountx = 0, holicounty = 0, x = 0, y =0;
 
             empam = new int[la];
             emppm = new int[lp];
@@ -213,33 +213,38 @@ namespace Bus449Proj
             checker = shiftComboBox.Text;
             foreach (DataRow dr in bus449_TestDataSet.Oncall_Calendar.Rows)
             {
-                /*
-                //weights holidays
-                if (checker == "A" || checkers == 0 && bool.Parse(dr["holiday"].ToString()))
-                {
-                    oncall.Update(empam[holicount], int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString(),
-                        DateTime.Parse(dr["Date_ID"].ToString()), int.Parse(dr["empid_am"].ToString()), int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString());
-                    holicount++;
-                }
-                if (checker == "P" || checkers == 1 && bool.Parse(dr["holiday"].ToString()))
-                {
-                    oncall.Update(int.Parse(dr["empid_am"].ToString()), emppm[holicount], bool.Parse(dr["holiday"].ToString()), dr["holday_desc"].ToString(),
-                        DateTime.Parse(dr["Date_ID"].ToString()), int.Parse(dr["empid_am"].ToString()), int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString());
-                    holicount++;
-                }
-                if (holicount >= empam.Length || holicount >= emppm.Length)
-                {
-                    holicount = 0;
-                }*/
-                //does the other days
-                    oncall.Update(empam[x], int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString(),
-                        DateTime.Parse(dr["Date_ID"].ToString()), int.Parse(dr["empid_am"].ToString()), int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString());
-                    x++;
-
-                    oncall.Update(int.Parse(dr["empid_am"].ToString()), emppm[y], bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString(),
-                        DateTime.Parse(dr["Date_ID"].ToString()), int.Parse(dr["empid_am"].ToString()), int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString());
-                    y++;
                 
+                //weights holidays
+                if (bool.Parse(dr["holiday"].ToString()))
+                {
+                    oncall.Update(empam[holicountx], int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString(),
+                        DateTime.Parse(dr["Date_ID"].ToString()), int.Parse(dr["empid_am"].ToString()), int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString());
+                    holicountx++;
+                
+                
+                    oncall.Update(int.Parse(dr["empid_am"].ToString()), emppm[holicounty], bool.Parse(dr["holiday"].ToString()), dr["holday_desc"].ToString(),
+                        DateTime.Parse(dr["Date_ID"].ToString()), int.Parse(dr["empid_am"].ToString()), int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString());
+                    holicounty++;
+                }
+                if (holicountx >= empam.Length)
+                {
+                    holicountx = 0;
+                }
+                if(holicounty >= emppm.Length)
+                {
+                    holicounty = 0;
+                }
+            //does the other days
+            if (!bool.Parse(dr["holiday"].ToString()))
+            {
+                oncall.Update(empam[x], int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString(),
+                        DateTime.Parse(dr["Date_ID"].ToString()), int.Parse(dr["empid_am"].ToString()), int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString());
+                x++;
+
+                oncall.Update(int.Parse(dr["empid_am"].ToString()), emppm[y], bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString(),
+                    DateTime.Parse(dr["Date_ID"].ToString()), int.Parse(dr["empid_am"].ToString()), int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString());
+                y++;
+            }
                 if (x >= empam.Length)
                 {
                     x = 0;
@@ -290,7 +295,7 @@ namespace Bus449Proj
             //creates usable adapter
             Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter oncall = new Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
 
-            int holicount = 0, x = 0, y = 0;
+            int holicountx = 0,holicounty =0, x = 0, y = 0;
 
 
             foreach (DataRow dt in bus449_TestDataSet.Employee.Rows)
@@ -310,35 +315,39 @@ namespace Bus449Proj
             checker = shiftComboBox.Text;
             foreach (DataRow dr in bus449_TestDataSet.Oncall_Calendar.Rows)
             {
-                /*
+
                 //weights holidays
-                if (checker == "A" || checkers == 0 && bool.Parse(dr["holiday"].ToString()))
+                if (bool.Parse(dr["holiday"].ToString()))
                 {
-                    oncall.Update(empam[holicount], int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString(),
+                    oncall.Update(empam[holicountx], int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString(),
                         DateTime.Parse(dr["Date_ID"].ToString()), int.Parse(dr["empid_am"].ToString()), int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString());
-                    holicount++;
-                }
-                if (checker == "P" || checkers == 1 && bool.Parse(dr["holiday"].ToString()))
-                {
-                    oncall.Update(int.Parse(dr["empid_am"].ToString()), emppm[holicount], bool.Parse(dr["holiday"].ToString()), dr["holday_desc"].ToString(),
+                    holicountx++;
+
+
+                    oncall.Update(int.Parse(dr["empid_am"].ToString()), emppm[holicounty], bool.Parse(dr["holiday"].ToString()), dr["holday_desc"].ToString(),
                         DateTime.Parse(dr["Date_ID"].ToString()), int.Parse(dr["empid_am"].ToString()), int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString());
-                    holicount++;
+                    holicounty++;
                 }
-                if (holicount >= empam.Length || holicount >= emppm.Length)
+                if (holicountx >= empam.Length)
                 {
-                    holicount = 0;
-                }*/
+                    holicountx = 0;
+                }
+                if(holicounty >= emppm.Length)
+                {
+                    holicounty = 0;
+                }
                 //does the other days
-                
-                
+
+                if (!bool.Parse(dr["holiday"].ToString()))
+                {
                     oncall.Update(empam[x], int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString(),
                         DateTime.Parse(dr["Date_ID"].ToString()), int.Parse(dr["empid_am"].ToString()), int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString());
                     x++;
-                
+
                     oncall.Update(int.Parse(dr["empid_am"].ToString()), emppm[y], bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString(),
                         DateTime.Parse(dr["Date_ID"].ToString()), int.Parse(dr["empid_am"].ToString()), int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString());
                     y++;
-                
+                }
                 if (x >= empam.Length)
                 {
                     x = 0;

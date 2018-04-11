@@ -33,8 +33,8 @@
             System.Windows.Forms.Label l_NameLabel;
             System.Windows.Forms.Label f_NameLabel;
             System.Windows.Forms.Label l_NameLabel1;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
             System.Windows.Forms.Label label1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
             this.mainButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.switchButton = new System.Windows.Forms.Button();
@@ -113,6 +113,15 @@
             l_NameLabel1.Size = new System.Drawing.Size(47, 13);
             l_NameLabel1.TabIndex = 10;
             l_NameLabel1.Text = "L Name:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(321, 82);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(47, 13);
+            label1.TabIndex = 15;
+            label1.Text = "F Name:";
             // 
             // mainButton
             // 
@@ -346,15 +355,6 @@
             this.newlnameComboBox.TabIndex = 14;
             this.newlnameComboBox.TextChanged += new System.EventHandler(this.newlnameComboBox_TextChanged);
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(321, 82);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(47, 13);
-            label1.TabIndex = 15;
-            label1.Text = "F Name:";
-            // 
             // fnameLabel2
             // 
             this.fnameLabel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -383,6 +383,7 @@
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.mainButton);
             this.Name = "Form5";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Switch";
             this.Load += new System.EventHandler(this.Form5_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bus449_TestDataSet)).EndInit();

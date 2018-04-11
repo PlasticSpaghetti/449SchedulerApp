@@ -74,7 +74,7 @@ namespace Bus449Proj
                 //inserts the holiday into the calendar with employees
                 oncall.Insert(day.Date, holia[a], holip[p], holiday, holiname);
                 //adds the holiday date to the listbox
-                holidaysListBox.Items.Add(day.Date + " " + holiname);
+                holidaysListBox.Items.Add(day.ToString("MM/dd/yyyy") + " " + holiname);
             }
 
             a++; p++;
@@ -155,6 +155,7 @@ namespace Bus449Proj
 
         private void clearButton_Click(object sender, EventArgs e)
         {
+            holidaysListBox.Items.Clear();
             //clears the calendar
             foreach (DataRow dr in bus449_TestDataSet.Oncall_Calendar.Rows)
             {
