@@ -129,7 +129,6 @@ namespace Bus449Proj
                 }
             }
             l_NameComboBox.Text = newname;
-            
         }
 
         private void l_NameComboBox_TextChanged(object sender, EventArgs e)
