@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.mainButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,7 +41,9 @@
             this.oncall_CalendarTableAdapter = new Bus449Proj.Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
             this.tableAdapterManager = new Bus449Proj.Bus449_TestDataSetTableAdapters.TableAdapterManager();
             this.bus449_TestDataSet = new Bus449Proj.Bus449_TestDataSet();
+            this.oncallCalendarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bus449_TestDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oncallCalendarBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // mainButton
@@ -91,11 +94,13 @@
             // 
             // startDateTimePicker
             // 
+            this.startDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.oncallCalendarBindingSource, "Date_ID", true));
             this.startDateTimePicker.Location = new System.Drawing.Point(88, 14);
             this.startDateTimePicker.Name = "startDateTimePicker";
             this.startDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.startDateTimePicker.TabIndex = 17;
-            this.startDateTimePicker.Value = new System.DateTime(2018, 3, 15, 0, 0, 0, 0);
+            this.startDateTimePicker.Value = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
+            this.startDateTimePicker.ValueChanged += new System.EventHandler(this.startDateTimePicker_ValueChanged);
             // 
             // endDateTimePicker
             // 
@@ -103,7 +108,7 @@
             this.endDateTimePicker.Name = "endDateTimePicker";
             this.endDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.endDateTimePicker.TabIndex = 18;
-            this.endDateTimePicker.Value = new System.DateTime(2018, 3, 15, 0, 0, 0, 0);
+            this.endDateTimePicker.Value = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
             // 
             // viewButton
             // 
@@ -135,6 +140,11 @@
             this.bus449_TestDataSet.DataSetName = "Bus449_TestDataSet";
             this.bus449_TestDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // oncallCalendarBindingSource
+            // 
+            this.oncallCalendarBindingSource.DataMember = "Oncall_Calendar";
+            this.oncallCalendarBindingSource.DataSource = this.bus449_TestDataSet;
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -153,6 +163,7 @@
             this.Text = "Date View";
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bus449_TestDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oncallCalendarBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,5 +183,6 @@
         private Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter oncall_CalendarTableAdapter;
         private Bus449_TestDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private Bus449_TestDataSet bus449_TestDataSet;
+        private System.Windows.Forms.BindingSource oncallCalendarBindingSource;
     }
 }

@@ -92,5 +92,11 @@ namespace Bus449Proj
             // TODO: This line of code loads data into the 'bus449_TestDataSet.Employee' table. You can move, or remove it, as needed.
             this.employeeTableAdapter.Fill(this.bus449_TestDataSet.Employee);
         }
+
+        private void startDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            if(endDateTimePicker.Value < startDateTimePicker.Value)
+                endDateTimePicker.Value = startDateTimePicker.Value;
+        }
     }
 }

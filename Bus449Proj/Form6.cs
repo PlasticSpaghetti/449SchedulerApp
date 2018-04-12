@@ -235,7 +235,7 @@ namespace Bus449Proj
                     holicounty = 0;
                 }
             //does the other days
-            if (!bool.Parse(dr["holiday"].ToString()))
+            else
             {
                 oncall.Update(empam[x], int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString(),
                         DateTime.Parse(dr["Date_ID"].ToString()), int.Parse(dr["empid_am"].ToString()), int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString());
@@ -338,7 +338,7 @@ namespace Bus449Proj
                 }
                 //does the other days
 
-                if (!bool.Parse(dr["holiday"].ToString()))
+                else
                 {
                     oncall.Update(empam[x], int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString(),
                         DateTime.Parse(dr["Date_ID"].ToString()), int.Parse(dr["empid_am"].ToString()), int.Parse(dr["empid_pm"].ToString()), bool.Parse(dr["holiday"].ToString()), dr["holiday_desc"].ToString());
