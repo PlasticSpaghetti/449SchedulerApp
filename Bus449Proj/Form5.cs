@@ -102,7 +102,7 @@ namespace Bus449Proj
                 {
                     oldid = int.Parse(dt["ID"].ToString());
                 }
-                else if(newname == check)
+                if(newname == check)
                 {
                     newid = int.Parse(dt["ID"].ToString());
                 }
@@ -123,12 +123,13 @@ namespace Bus449Proj
                 {
                     oncall.Update(newid, pm, holiday, desc, date, oldid, pm, holiday, desc);
                 }
-                else if(pm == oldid)
+                if(pm == oldid)
                 {
-                    oncall.Update(am, newid, holiday, desc, date, oldid, pm, holiday, desc);
+                    oncall.Update(am, newid, holiday, desc, date, am, oldid, holiday, desc);
                 }
             }
             l_NameComboBox.Text = newname;
+            
         }
 
         private void l_NameComboBox_TextChanged(object sender, EventArgs e)
