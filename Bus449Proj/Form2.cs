@@ -75,10 +75,14 @@ namespace Bus449Proj
                 oncall.Insert(day.Date, holia[a], holip[p], holiday, holiname);
                 //adds the holiday date to the listbox
                 holidaysListBox.Items.Add(day.ToString("MM/dd/yyyy") + " " + holiname);
+
+
+                a++; p++;
             }
-
-            a++; p++;
-
+            else
+            {
+                MessageBox.Show("That date already exists.");
+            }
                 if (a >= holia.Length)
                     a = 0;
                 if (p >= holip.Length)

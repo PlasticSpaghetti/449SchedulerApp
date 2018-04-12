@@ -76,5 +76,25 @@ namespace Bus449Proj
             this.tableAdapterManager.UpdateAll(this.bus449_TestDataSet);
 
         }
+
+        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
+        {
+            datesListBox.Items.Clear();
+        }
+
+        private void bindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
+        {
+            datesListBox.Items.Clear();
+        }
+
+        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
+        {
+            datesListBox.Items.Clear();
+        }
+
+        private void bindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
+        {
+            datesListBox.Items.Clear();
+        }
     }
 }
