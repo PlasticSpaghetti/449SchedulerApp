@@ -40,6 +40,7 @@ namespace Bus449Proj
             l_NameComboBox.Items.Clear();
             DateTime date = new DateTime();
             date = switchDateTimePicker.Value;
+            string amlname = "", pmlname = "";
 
             foreach (DataRow dr in bus449_TestDataSet.Oncall_Calendar.Rows)
             {
@@ -51,7 +52,7 @@ namespace Bus449Proj
                     int am, pm;
                     int.TryParse(dr["empid_am"].ToString(), out am);
                     int.TryParse(dr["empid_pm"].ToString(), out pm);
-                    string amlname = "", pmlname = "";
+                   
                     foreach (DataRow dt in bus449_TestDataSet.Employee.Rows)
                     {
                         int check1 = int.Parse(dt["ID"].ToString());
@@ -74,6 +75,7 @@ namespace Bus449Proj
 
                 }
             }
+            l_NameComboBox.Text = amlname;
         }
 
         private void oncall_CalendarBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -126,6 +128,7 @@ namespace Bus449Proj
                     oncall.Update(am, newid, holiday, desc, date, oldid, pm, holiday, desc);
                 }
             }
+            l_NameComboBox.Text = newname;
         }
 
         private void l_NameComboBox_TextChanged(object sender, EventArgs e)
