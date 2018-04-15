@@ -32,8 +32,8 @@
             System.Windows.Forms.Label iDLabel;
             System.Windows.Forms.Label f_NameLabel;
             System.Windows.Forms.Label l_NameLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             System.Windows.Forms.Label shiftLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.datesListBox = new System.Windows.Forms.ListBox();
             this.exitButton = new System.Windows.Forms.Button();
             this.mainButton = new System.Windows.Forms.Button();
@@ -98,6 +98,15 @@
             l_NameLabel.Size = new System.Drawing.Size(47, 13);
             l_NameLabel.TabIndex = 10;
             l_NameLabel.Text = "L Name:";
+            // 
+            // shiftLabel
+            // 
+            shiftLabel.AutoSize = true;
+            shiftLabel.Location = new System.Drawing.Point(26, 126);
+            shiftLabel.Name = "shiftLabel";
+            shiftLabel.Size = new System.Drawing.Size(31, 13);
+            shiftLabel.TabIndex = 11;
+            shiftLabel.Text = "Shift:";
             // 
             // datesListBox
             // 
@@ -165,6 +174,7 @@
             // employeeBindingNavigator
             // 
             this.employeeBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.employeeBindingNavigator.BackColor = System.Drawing.Color.Transparent;
             this.employeeBindingNavigator.BindingSource = this.employeeBindingSource;
             this.employeeBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.employeeBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
@@ -337,15 +347,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Employee Info";
             // 
-            // shiftLabel
-            // 
-            shiftLabel.AutoSize = true;
-            shiftLabel.Location = new System.Drawing.Point(26, 126);
-            shiftLabel.Name = "shiftLabel";
-            shiftLabel.Size = new System.Drawing.Size(31, 13);
-            shiftLabel.TabIndex = 11;
-            shiftLabel.Text = "Shift:";
-            // 
             // shiftLabel1
             // 
             this.shiftLabel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -359,6 +360,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(509, 228);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.employeeBindingNavigator);

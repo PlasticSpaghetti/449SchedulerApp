@@ -55,7 +55,7 @@
             // 
             // mainButton
             // 
-            this.mainButton.Location = new System.Drawing.Point(318, 180);
+            this.mainButton.Location = new System.Drawing.Point(342, 180);
             this.mainButton.Name = "mainButton";
             this.mainButton.Size = new System.Drawing.Size(75, 23);
             this.mainButton.TabIndex = 0;
@@ -65,7 +65,7 @@
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(318, 209);
+            this.exitButton.Location = new System.Drawing.Point(342, 209);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 23);
             this.exitButton.TabIndex = 1;
@@ -96,7 +96,7 @@
             this.startDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.oncallCalendarBindingSource, "Date_ID", true));
             this.startDateTimePicker.Location = new System.Drawing.Point(71, 13);
             this.startDateTimePicker.Name = "startDateTimePicker";
-            this.startDateTimePicker.Size = new System.Drawing.Size(223, 20);
+            this.startDateTimePicker.Size = new System.Drawing.Size(247, 20);
             this.startDateTimePicker.TabIndex = 17;
             this.startDateTimePicker.Value = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
             this.startDateTimePicker.ValueChanged += new System.EventHandler(this.startDateTimePicker_ValueChanged);
@@ -115,13 +115,13 @@
             // 
             this.endDateTimePicker.Location = new System.Drawing.Point(71, 39);
             this.endDateTimePicker.Name = "endDateTimePicker";
-            this.endDateTimePicker.Size = new System.Drawing.Size(223, 20);
+            this.endDateTimePicker.Size = new System.Drawing.Size(247, 20);
             this.endDateTimePicker.TabIndex = 18;
             this.endDateTimePicker.Value = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
             // 
             // viewButton
             // 
-            this.viewButton.Location = new System.Drawing.Point(318, 12);
+            this.viewButton.Location = new System.Drawing.Point(342, 12);
             this.viewButton.Name = "viewButton";
             this.viewButton.Size = new System.Drawing.Size(75, 162);
             this.viewButton.TabIndex = 19;
@@ -152,7 +152,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(300, 67);
+            this.groupBox1.Size = new System.Drawing.Size(324, 67);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Select Date";
@@ -166,7 +166,7 @@
             this.Shift});
             this.datesListView.Location = new System.Drawing.Point(12, 85);
             this.datesListView.Name = "datesListView";
-            this.datesListView.Size = new System.Drawing.Size(300, 148);
+            this.datesListView.Size = new System.Drawing.Size(324, 148);
             this.datesListView.TabIndex = 21;
             this.datesListView.UseCompatibleStateImageBehavior = false;
             this.datesListView.View = System.Windows.Forms.View.Details;
@@ -188,13 +188,14 @@
             // Shift
             // 
             this.Shift.Text = "Shift";
-            this.Shift.Width = 30;
+            this.Shift.Width = 43;
             // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(408, 245);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(429, 245);
             this.Controls.Add(this.datesListView);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.viewButton);
