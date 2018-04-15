@@ -107,6 +107,21 @@ namespace Bus449Proj
             this.oncall_CalendarTableAdapter.Fill(this.bus449_TestDataSet.Oncall_Calendar);
             // TODO: This line of code loads data into the 'bus449_TestDataSet.Employee' table. You can move, or remove it, as needed.
             this.employeeTableAdapter.Fill(this.bus449_TestDataSet.Employee);
+
+            DataView calendar = new DataView(bus449_TestDataSet.Oncall_Calendar);
+            calendar.Sort = "Date_ID ASC";
+            int count = 0;
+            foreach(DataRowView dr in calendar)
+            {
+                if(count == 0)
+                {
+                    startDateTimePicker.Value = DateTime.Parse(dr["Date_ID"].ToString());
+                    endDateTimePicker.Value = DateTime.Parse(dr["Date_ID"].ToString());
+                }
+                count++;
+            }
+
+
         }
 
         private void startDateTimePicker_ValueChanged(object sender, EventArgs e)
