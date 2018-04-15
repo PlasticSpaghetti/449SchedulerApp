@@ -93,61 +93,65 @@ namespace Bus449Proj
 
         private void createButton_Click(object sender, EventArgs e)
         {
-            //creates and sets start and end date variables
-            DateTime startdate = new DateTime();
-            DateTime enddate = new DateTime();
-            startdate = startdateTimePicker.Value;
-            enddate = enddateTimePicker.Value;
-
-            //creates usable adapter
-            Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter oncall = new Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
-            
-           
-
-            //creates and populates arrays for employees IDs
-            int x = 0, y = 0;
-            foreach (DataRow dr in bus449_TestDataSet.Employee.Rows)
+            MessageBox.Show("Have you entered all of the desired holidays", "Holiday Confirmation", MessageBoxButtons.YesNo);
+            if (MessageBoxButtons.YesNo.Equals("Yes"))
             {
-                if (dr["shift"].ToString() == "A")
+                //creates and sets start and end date variables
+                DateTime startdate = new DateTime();
+                DateTime enddate = new DateTime();
+                startdate = startdateTimePicker.Value;
+                enddate = enddateTimePicker.Value;
+
+                //creates usable adapter
+                Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter oncall = new Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
+
+
+
+                //creates and populates arrays for employees IDs
+                int x = 0, y = 0;
+                foreach (DataRow dr in bus449_TestDataSet.Employee.Rows)
                 {
-                    amid[x] = int.Parse(dr["ID"].ToString());
-                    x++;
-                }
-                else
-                {
-                    pmid[y] = int.Parse(dr["ID"].ToString());
-                    y++;
-                }
-
-            }
-
-
-            int loopa=0, loopp=0; bool holiday = false;
-            string holiname = "";
-            //loops from startdate to enddate
-            for (var day = startdate.Date; day.Date <= enddate.Date; day = day.AddDays(1))
-            {
-                int count = 0;
-                count = (int) oncall.ScalarCheck(day.Date);
-                if (count <= 0)
-                {
-                    //inserts the day into the calendar with an am and pm oncall employee
-                    oncall.Insert(day.Date, amid[loopa], pmid[loopp], holiday, holiname);
-
-                    //rotates to next employee
-                    loopa++; loopp++;
+                    if (dr["shift"].ToString() == "A")
+                    {
+                        amid[x] = int.Parse(dr["ID"].ToString());
+                        x++;
+                    }
+                    else
+                    {
+                        pmid[y] = int.Parse(dr["ID"].ToString());
+                        y++;
+                    }
 
                 }
-                
+
+
+                int loopa = 0, loopp = 0; bool holiday = false;
+                string holiname = "";
+                //loops from startdate to enddate
+                for (var day = startdate.Date; day.Date <= enddate.Date; day = day.AddDays(1))
+                {
+                    int count = 0;
+                    count = (int)oncall.ScalarCheck(day.Date);
+                    if (count <= 0)
+                    {
+                        //inserts the day into the calendar with an am and pm oncall employee
+                        oncall.Insert(day.Date, amid[loopa], pmid[loopp], holiday, holiname);
+
+                        //rotates to next employee
+                        loopa++; loopp++;
+
+                    }
+
                     //resets the array to prevent errors
                     if (loopa >= amid.Length)
                         loopa = 0;
                     if (loopp >= pmid.Length)
                         loopp = 0;
-                
 
+
+                }
+                this.tableAdapterManager.UpdateAll(this.bus449_TestDataSet);
             }
-            this.tableAdapterManager.UpdateAll(this.bus449_TestDataSet);
         }
 
         private void oncall_CalendarBindingNavigatorSaveItem_Click(object sender, EventArgs e)
