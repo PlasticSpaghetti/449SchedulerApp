@@ -340,8 +340,11 @@
             this.Controls.Add(date_IDLabel);
             this.Controls.Add(this.date_IDDateTimePicker);
             this.Controls.Add(this.oncall_CalendarBindingNavigator);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form7";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form7";
             this.Load += new System.EventHandler(this.Form7_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bus449_TestDataSet)).EndInit();
