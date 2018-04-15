@@ -328,6 +328,7 @@
             this.Controls.Add(this.mainButton);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.datesListBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Employee View";

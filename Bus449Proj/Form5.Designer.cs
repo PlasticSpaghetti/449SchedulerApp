@@ -34,6 +34,7 @@
             System.Windows.Forms.Label f_NameLabel;
             System.Windows.Forms.Label l_NameLabel1;
             System.Windows.Forms.Label label1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
             this.mainButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.switchButton = new System.Windows.Forms.Button();
@@ -241,6 +242,7 @@
             this.Controls.Add(this.switchButton);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.mainButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form5";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Switch";

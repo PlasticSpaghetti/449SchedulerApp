@@ -406,6 +406,7 @@
             this.Controls.Add(this.employeeBindingNavigator);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.mainButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form6";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Employees";

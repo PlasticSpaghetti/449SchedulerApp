@@ -29,28 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form7));
             System.Windows.Forms.Label date_IDLabel;
             System.Windows.Forms.Label empid_amLabel;
             System.Windows.Forms.Label empid_pmLabel;
             System.Windows.Forms.Label holidayLabel;
             System.Windows.Forms.Label holiday_descLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form7));
             this.bus449_TestDataSet = new Bus449Proj.Bus449_TestDataSet();
             this.oncall_CalendarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oncall_CalendarTableAdapter = new Bus449Proj.Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
             this.tableAdapterManager = new Bus449Proj.Bus449_TestDataSetTableAdapters.TableAdapterManager();
             this.oncall_CalendarBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.oncall_CalendarBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.date_IDDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.empid_amTextBox = new System.Windows.Forms.TextBox();
@@ -69,6 +69,51 @@
             ((System.ComponentModel.ISupportInitialize)(this.oncall_CalendarBindingNavigator)).BeginInit();
             this.oncall_CalendarBindingNavigator.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // date_IDLabel
+            // 
+            date_IDLabel.AutoSize = true;
+            date_IDLabel.Location = new System.Drawing.Point(11, 48);
+            date_IDLabel.Name = "date_IDLabel";
+            date_IDLabel.Size = new System.Drawing.Size(47, 13);
+            date_IDLabel.TabIndex = 1;
+            date_IDLabel.Text = "Date ID:";
+            // 
+            // empid_amLabel
+            // 
+            empid_amLabel.AutoSize = true;
+            empid_amLabel.Location = new System.Drawing.Point(12, 95);
+            empid_amLabel.Name = "empid_amLabel";
+            empid_amLabel.Size = new System.Drawing.Size(55, 13);
+            empid_amLabel.TabIndex = 3;
+            empid_amLabel.Text = "empid am:";
+            // 
+            // empid_pmLabel
+            // 
+            empid_pmLabel.AutoSize = true;
+            empid_pmLabel.Location = new System.Drawing.Point(12, 139);
+            empid_pmLabel.Name = "empid_pmLabel";
+            empid_pmLabel.Size = new System.Drawing.Size(55, 13);
+            empid_pmLabel.TabIndex = 5;
+            empid_pmLabel.Text = "empid pm:";
+            // 
+            // holidayLabel
+            // 
+            holidayLabel.AutoSize = true;
+            holidayLabel.Location = new System.Drawing.Point(15, 181);
+            holidayLabel.Name = "holidayLabel";
+            holidayLabel.Size = new System.Drawing.Size(43, 13);
+            holidayLabel.TabIndex = 9;
+            holidayLabel.Text = "holiday:";
+            // 
+            // holiday_descLabel
+            // 
+            holiday_descLabel.AutoSize = true;
+            holiday_descLabel.Location = new System.Drawing.Point(11, 218);
+            holiday_descLabel.Name = "holiday_descLabel";
+            holiday_descLabel.Size = new System.Drawing.Size(69, 13);
+            holiday_descLabel.TabIndex = 11;
+            holiday_descLabel.Text = "holiday desc:";
             // 
             // bus449_TestDataSet
             // 
@@ -121,6 +166,31 @@
             this.oncall_CalendarBindingNavigator.TabIndex = 0;
             this.oncall_CalendarBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -153,16 +223,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -185,26 +248,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // oncall_CalendarBindingNavigatorSaveItem
             // 
@@ -215,15 +260,6 @@
             this.oncall_CalendarBindingNavigatorSaveItem.Text = "Save Data";
             this.oncall_CalendarBindingNavigatorSaveItem.Click += new System.EventHandler(this.oncall_CalendarBindingNavigatorSaveItem_Click);
             // 
-            // date_IDLabel
-            // 
-            date_IDLabel.AutoSize = true;
-            date_IDLabel.Location = new System.Drawing.Point(11, 48);
-            date_IDLabel.Name = "date_IDLabel";
-            date_IDLabel.Size = new System.Drawing.Size(47, 13);
-            date_IDLabel.TabIndex = 1;
-            date_IDLabel.Text = "Date ID:";
-            // 
             // date_IDDateTimePicker
             // 
             this.date_IDDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.oncall_CalendarBindingSource, "Date_ID", true));
@@ -232,15 +268,6 @@
             this.date_IDDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.date_IDDateTimePicker.TabIndex = 2;
             // 
-            // empid_amLabel
-            // 
-            empid_amLabel.AutoSize = true;
-            empid_amLabel.Location = new System.Drawing.Point(12, 95);
-            empid_amLabel.Name = "empid_amLabel";
-            empid_amLabel.Size = new System.Drawing.Size(55, 13);
-            empid_amLabel.TabIndex = 3;
-            empid_amLabel.Text = "empid am:";
-            // 
             // empid_amTextBox
             // 
             this.empid_amTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.oncall_CalendarBindingSource, "empid_am", true));
@@ -248,15 +275,6 @@
             this.empid_amTextBox.Name = "empid_amTextBox";
             this.empid_amTextBox.Size = new System.Drawing.Size(100, 20);
             this.empid_amTextBox.TabIndex = 4;
-            // 
-            // empid_pmLabel
-            // 
-            empid_pmLabel.AutoSize = true;
-            empid_pmLabel.Location = new System.Drawing.Point(12, 139);
-            empid_pmLabel.Name = "empid_pmLabel";
-            empid_pmLabel.Size = new System.Drawing.Size(55, 13);
-            empid_pmLabel.TabIndex = 5;
-            empid_pmLabel.Text = "empid pm:";
             // 
             // empid_pmTextBox
             // 
@@ -286,15 +304,6 @@
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // holidayLabel
-            // 
-            holidayLabel.AutoSize = true;
-            holidayLabel.Location = new System.Drawing.Point(15, 181);
-            holidayLabel.Name = "holidayLabel";
-            holidayLabel.Size = new System.Drawing.Size(43, 13);
-            holidayLabel.TabIndex = 9;
-            holidayLabel.Text = "holiday:";
-            // 
             // holidayCheckBox
             // 
             this.holidayCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.oncall_CalendarBindingSource, "holiday", true));
@@ -304,15 +313,6 @@
             this.holidayCheckBox.TabIndex = 10;
             this.holidayCheckBox.Text = "checkBox1";
             this.holidayCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // holiday_descLabel
-            // 
-            holiday_descLabel.AutoSize = true;
-            holiday_descLabel.Location = new System.Drawing.Point(11, 218);
-            holiday_descLabel.Name = "holiday_descLabel";
-            holiday_descLabel.Size = new System.Drawing.Size(69, 13);
-            holiday_descLabel.TabIndex = 11;
-            holiday_descLabel.Text = "holiday desc:";
             // 
             // holiday_descTextBox
             // 
@@ -340,6 +340,7 @@
             this.Controls.Add(date_IDLabel);
             this.Controls.Add(this.date_IDDateTimePicker);
             this.Controls.Add(this.oncall_CalendarBindingNavigator);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form7";
             this.Text = "Form7";
             this.Load += new System.EventHandler(this.Form7_Load);

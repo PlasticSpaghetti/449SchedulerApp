@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label holiday_descLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.label2 = new System.Windows.Forms.Label();
             this.createButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
@@ -48,15 +49,19 @@
             this.tableAdapterManager = new Bus449Proj.Bus449_TestDataSetTableAdapters.TableAdapterManager();
             this.holiday_descTextBox = new System.Windows.Forms.TextBox();
             this.employeeTableAdapter = new Bus449Proj.Bus449_TestDataSetTableAdapters.EmployeeTableAdapter();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             holiday_descLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bus449_TestDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oncall_CalendarBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // holiday_descLabel
             // 
             holiday_descLabel.AutoSize = true;
-            holiday_descLabel.Location = new System.Drawing.Point(302, 25);
+            holiday_descLabel.Location = new System.Drawing.Point(18, 22);
             holiday_descLabel.Name = "holiday_descLabel";
             holiday_descLabel.Size = new System.Drawing.Size(45, 13);
             holiday_descLabel.TabIndex = 21;
@@ -65,7 +70,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 111);
+            this.label2.Location = new System.Drawing.Point(9, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 1;
@@ -73,9 +78,9 @@
             // 
             // createButton
             // 
-            this.createButton.Location = new System.Drawing.Point(16, 275);
+            this.createButton.Location = new System.Drawing.Point(305, 12);
             this.createButton.Name = "createButton";
-            this.createButton.Size = new System.Drawing.Size(100, 23);
+            this.createButton.Size = new System.Drawing.Size(100, 47);
             this.createButton.TabIndex = 2;
             this.createButton.Text = "Create Schedule";
             this.createButton.UseVisualStyleBackColor = true;
@@ -83,7 +88,7 @@
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(411, 275);
+            this.exitButton.Location = new System.Drawing.Point(12, 304);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(102, 23);
             this.exitButton.TabIndex = 3;
@@ -93,7 +98,7 @@
             // 
             // mainButton
             // 
-            this.mainButton.Location = new System.Drawing.Point(280, 275);
+            this.mainButton.Location = new System.Drawing.Point(188, 304);
             this.mainButton.Name = "mainButton";
             this.mainButton.Size = new System.Drawing.Size(111, 23);
             this.mainButton.TabIndex = 10;
@@ -104,25 +109,25 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(302, 57);
+            this.label3.Location = new System.Drawing.Point(30, 51);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 13);
+            this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 11;
-            this.label3.Text = "Holiday Date:";
+            this.label3.Text = "Date:";
             // 
             // holidaysListBox
             // 
             this.holidaysListBox.FormattingEnabled = true;
-            this.holidaysListBox.Location = new System.Drawing.Point(305, 117);
+            this.holidaysListBox.Location = new System.Drawing.Point(69, 102);
             this.holidaysListBox.Name = "holidaysListBox";
-            this.holidaysListBox.Size = new System.Drawing.Size(208, 134);
+            this.holidaysListBox.Size = new System.Drawing.Size(200, 82);
             this.holidaysListBox.TabIndex = 15;
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(379, 88);
+            this.addButton.Location = new System.Drawing.Point(69, 71);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(134, 23);
+            this.addButton.Size = new System.Drawing.Size(200, 23);
             this.addButton.TabIndex = 16;
             this.addButton.Text = "Add Holiday";
             this.addButton.UseVisualStyleBackColor = true;
@@ -131,7 +136,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 57);
+            this.label1.Location = new System.Drawing.Point(6, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 0;
@@ -139,7 +144,7 @@
             // 
             // startdateTimePicker
             // 
-            this.startdateTimePicker.Location = new System.Drawing.Point(77, 51);
+            this.startdateTimePicker.Location = new System.Drawing.Point(70, 13);
             this.startdateTimePicker.Name = "startdateTimePicker";
             this.startdateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.startdateTimePicker.TabIndex = 17;
@@ -148,7 +153,7 @@
             // 
             // enddateTimePicker
             // 
-            this.enddateTimePicker.Location = new System.Drawing.Point(77, 105);
+            this.enddateTimePicker.Location = new System.Drawing.Point(70, 41);
             this.enddateTimePicker.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
             this.enddateTimePicker.Name = "enddateTimePicker";
             this.enddateTimePicker.Size = new System.Drawing.Size(200, 20);
@@ -157,17 +162,17 @@
             // 
             // holidayTimePicker
             // 
-            this.holidayTimePicker.Location = new System.Drawing.Point(379, 51);
+            this.holidayTimePicker.Location = new System.Drawing.Point(69, 45);
             this.holidayTimePicker.Name = "holidayTimePicker";
-            this.holidayTimePicker.Size = new System.Drawing.Size(205, 20);
+            this.holidayTimePicker.Size = new System.Drawing.Size(200, 20);
             this.holidayTimePicker.TabIndex = 19;
             this.holidayTimePicker.Value = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
             // 
             // clearButton
             // 
-            this.clearButton.Location = new System.Drawing.Point(141, 275);
+            this.clearButton.Location = new System.Drawing.Point(305, 65);
             this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(113, 23);
+            this.clearButton.Size = new System.Drawing.Size(100, 23);
             this.clearButton.TabIndex = 20;
             this.clearButton.Text = "Clear Schedule";
             this.clearButton.UseVisualStyleBackColor = true;
@@ -197,42 +202,66 @@
             // holiday_descTextBox
             // 
             this.holiday_descTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.oncall_CalendarBindingSource, "holiday_desc", true));
-            this.holiday_descTextBox.Location = new System.Drawing.Point(377, 22);
+            this.holiday_descTextBox.Location = new System.Drawing.Point(69, 19);
             this.holiday_descTextBox.Name = "holiday_descTextBox";
-            this.holiday_descTextBox.Size = new System.Drawing.Size(100, 20);
+            this.holiday_descTextBox.Size = new System.Drawing.Size(200, 20);
             this.holiday_descTextBox.TabIndex = 22;
             // 
             // employeeTableAdapter
             // 
             this.employeeTableAdapter.ClearBeforeFill = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.startdateTimePicker);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.enddateTimePicker);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(287, 76);
+            this.groupBox1.TabIndex = 23;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Calendar Info";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.holiday_descTextBox);
+            this.groupBox2.Controls.Add(holiday_descLabel);
+            this.groupBox2.Controls.Add(this.holidayTimePicker);
+            this.groupBox2.Controls.Add(this.holidaysListBox);
+            this.groupBox2.Controls.Add(this.addButton);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Location = new System.Drawing.Point(13, 95);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(286, 203);
+            this.groupBox2.TabIndex = 24;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Holiday Info";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(650, 343);
-            this.Controls.Add(holiday_descLabel);
-            this.Controls.Add(this.holiday_descTextBox);
+            this.ClientSize = new System.Drawing.Size(418, 339);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.clearButton);
-            this.Controls.Add(this.holidayTimePicker);
-            this.Controls.Add(this.enddateTimePicker);
-            this.Controls.Add(this.startdateTimePicker);
-            this.Controls.Add(this.addButton);
-            this.Controls.Add(this.holidaysListBox);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.mainButton);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.createButton);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create Schedule";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bus449_TestDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oncall_CalendarBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -255,5 +284,7 @@
         private Bus449_TestDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox holiday_descTextBox;
         private Bus449_TestDataSetTableAdapters.EmployeeTableAdapter employeeTableAdapter;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

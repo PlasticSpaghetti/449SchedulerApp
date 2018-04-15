@@ -29,21 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
             this.mainButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dateviewListBox = new System.Windows.Forms.ListBox();
             this.startDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.oncallCalendarBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bus449_TestDataSet = new Bus449Proj.Bus449_TestDataSet();
             this.endDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.viewButton = new System.Windows.Forms.Button();
             this.employeeTableAdapter = new Bus449Proj.Bus449_TestDataSetTableAdapters.EmployeeTableAdapter();
             this.oncall_CalendarTableAdapter = new Bus449Proj.Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
             this.tableAdapterManager = new Bus449Proj.Bus449_TestDataSetTableAdapters.TableAdapterManager();
-            this.bus449_TestDataSet = new Bus449Proj.Bus449_TestDataSet();
-            this.oncallCalendarBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.bus449_TestDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oncallCalendarBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bus449_TestDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // mainButton
@@ -102,6 +103,16 @@
             this.startDateTimePicker.Value = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
             this.startDateTimePicker.ValueChanged += new System.EventHandler(this.startDateTimePicker_ValueChanged);
             // 
+            // oncallCalendarBindingSource
+            // 
+            this.oncallCalendarBindingSource.DataMember = "Oncall_Calendar";
+            this.oncallCalendarBindingSource.DataSource = this.bus449_TestDataSet;
+            // 
+            // bus449_TestDataSet
+            // 
+            this.bus449_TestDataSet.DataSetName = "Bus449_TestDataSet";
+            this.bus449_TestDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // endDateTimePicker
             // 
             this.endDateTimePicker.Location = new System.Drawing.Point(88, 68);
@@ -135,16 +146,6 @@
             this.tableAdapterManager.Oncall_CalendarTableAdapter = this.oncall_CalendarTableAdapter;
             this.tableAdapterManager.UpdateOrder = Bus449Proj.Bus449_TestDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // bus449_TestDataSet
-            // 
-            this.bus449_TestDataSet.DataSetName = "Bus449_TestDataSet";
-            this.bus449_TestDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // oncallCalendarBindingSource
-            // 
-            this.oncallCalendarBindingSource.DataMember = "Oncall_Calendar";
-            this.oncallCalendarBindingSource.DataSource = this.bus449_TestDataSet;
-            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,12 +159,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.mainButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Date View";
             this.Load += new System.EventHandler(this.Form4_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bus449_TestDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oncallCalendarBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bus449_TestDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

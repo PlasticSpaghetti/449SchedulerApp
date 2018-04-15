@@ -70,5 +70,10 @@ namespace Bus449Proj
             form1.FormClosed += (s, args) => this.Close();
             form1.Show();
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

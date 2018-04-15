@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>cn_icon_f0D_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -140,6 +143,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Bus449_TestDataSet.xsc">
       <DependentUpon>Bus449_TestDataSet.xsd</DependentUpon>
@@ -172,6 +176,9 @@
     <Content Include="Bus449_Test.accdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="cn_icon_f0D_icon.ico" />
+    <None Include="Resources\cn_logo_full_g.png" />
+    <None Include="Resources\cn_logo_full_w.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
