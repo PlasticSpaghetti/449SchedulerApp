@@ -93,7 +93,7 @@ namespace Bus449Proj
 
         private void createButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Have you entered all of the desired holidays", "Holiday Confirmation", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Have you entered all of the desired holidays?", "Holiday Confirmation", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 //creates and sets start and end date variables
@@ -151,6 +151,7 @@ namespace Bus449Proj
 
                 }
                 this.tableAdapterManager.UpdateAll(this.bus449_TestDataSet);
+                MessageBox.Show("Your schedule has been created!");
             }
         }
 
@@ -164,13 +165,18 @@ namespace Bus449Proj
 
         private void clearButton_Click(object sender, EventArgs e)
         {
-            holidaysListBox.Items.Clear();
-            //clears the calendar
-            foreach (DataRow dr in bus449_TestDataSet.Oncall_Calendar.Rows)
+            DialogResult result = MessageBox.Show("Are you sure you want to clear the schedule?", "Clear Confirmation", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
-                dr.Delete();
-            }
+                holidaysListBox.Items.Clear();
+                //clears the calendar
+                foreach (DataRow dr in bus449_TestDataSet.Oncall_Calendar.Rows)
+                {
+                    dr.Delete();
+                }
                 this.tableAdapterManager.UpdateAll(this.bus449_TestDataSet);
+                MessageBox.Show("The schedule has been cleared.");
+            }
         }
 
         private void Form2_Load(object sender, EventArgs e)
