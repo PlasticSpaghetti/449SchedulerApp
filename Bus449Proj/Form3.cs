@@ -43,9 +43,11 @@ namespace Bus449Proj
             Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter oncall = new Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
             Bus449_TestDataSetTableAdapters.EmployeeTableAdapter employee = new Bus449_TestDataSetTableAdapters.EmployeeTableAdapter();
 
-            
-           //int.TryParse(employeeTableAdapter.GetDataByName(lname, fname).ToString(), out id);
-           foreach(DataRow dr in bus449_TestDataSet.Oncall_Calendar.Rows)
+
+            //int.TryParse(employeeTableAdapter.GetDataByName(lname, fname).ToString(), out id);
+            DataView calendar = new DataView(bus449_TestDataSet.Oncall_Calendar);
+            calendar.Sort = "Date_ID ASC";
+            foreach (DataRowView dr in calendar)
             {
                 int am, pm;
                 int.TryParse(dr["empid_am"].ToString(), out am);

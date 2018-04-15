@@ -33,6 +33,7 @@
             System.Windows.Forms.Label f_NameLabel;
             System.Windows.Forms.Label l_NameLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
+            System.Windows.Forms.Label shiftLabel;
             this.datesListBox = new System.Windows.Forms.ListBox();
             this.exitButton = new System.Windows.Forms.Button();
             this.mainButton = new System.Windows.Forms.Button();
@@ -59,9 +60,11 @@
             this.f_NameLabel1 = new System.Windows.Forms.Label();
             this.l_NameLabel1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.shiftLabel1 = new System.Windows.Forms.Label();
             iDLabel = new System.Windows.Forms.Label();
             f_NameLabel = new System.Windows.Forms.Label();
             l_NameLabel = new System.Windows.Forms.Label();
+            shiftLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bus449_TestDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingNavigator)).BeginInit();
@@ -99,9 +102,9 @@
             // datesListBox
             // 
             this.datesListBox.FormattingEnabled = true;
-            this.datesListBox.Location = new System.Drawing.Point(248, 28);
+            this.datesListBox.Location = new System.Drawing.Point(262, 28);
             this.datesListBox.Name = "datesListBox";
-            this.datesListBox.Size = new System.Drawing.Size(164, 186);
+            this.datesListBox.Size = new System.Drawing.Size(150, 186);
             this.datesListBox.TabIndex = 4;
             // 
             // exitButton
@@ -319,6 +322,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(shiftLabel);
+            this.groupBox1.Controls.Add(this.shiftLabel1);
             this.groupBox1.Controls.Add(this.iDLabel1);
             this.groupBox1.Controls.Add(l_NameLabel);
             this.groupBox1.Controls.Add(iDLabel);
@@ -327,10 +332,28 @@
             this.groupBox1.Controls.Add(f_NameLabel);
             this.groupBox1.Location = new System.Drawing.Point(12, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(230, 189);
+            this.groupBox1.Size = new System.Drawing.Size(244, 189);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Employee Info";
+            // 
+            // shiftLabel
+            // 
+            shiftLabel.AutoSize = true;
+            shiftLabel.Location = new System.Drawing.Point(26, 126);
+            shiftLabel.Name = "shiftLabel";
+            shiftLabel.Size = new System.Drawing.Size(31, 13);
+            shiftLabel.TabIndex = 11;
+            shiftLabel.Text = "Shift:";
+            // 
+            // shiftLabel1
+            // 
+            this.shiftLabel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.shiftLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "shift", true));
+            this.shiftLabel1.Location = new System.Drawing.Point(61, 116);
+            this.shiftLabel1.Name = "shiftLabel1";
+            this.shiftLabel1.Size = new System.Drawing.Size(163, 23);
+            this.shiftLabel1.TabIndex = 12;
             // 
             // Form3
             // 
@@ -389,5 +412,6 @@
         private System.Windows.Forms.Label f_NameLabel1;
         private System.Windows.Forms.Label l_NameLabel1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label shiftLabel1;
     }
 }

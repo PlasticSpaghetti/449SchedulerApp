@@ -32,7 +32,7 @@ namespace Bus449Proj
 
         private void viewButton_Click(object sender, EventArgs e)
         {
-            dateviewListBox.Items.Clear();
+            datesListView.Items.Clear();
 
             DateTime start = new DateTime();
             DateTime end = new DateTime();
@@ -41,8 +41,9 @@ namespace Bus449Proj
 
             Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter oncall = new Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
             Bus449_TestDataSetTableAdapters.EmployeeTableAdapter employee = new Bus449_TestDataSetTableAdapters.EmployeeTableAdapter();
-
-            foreach (DataRow dr in bus449_TestDataSet.Oncall_Calendar.Rows)
+            DataView calendar = new DataView(bus449_TestDataSet.Oncall_Calendar);
+            calendar.Sort = "Date_ID ASC";
+            foreach (DataRowView dr in calendar)
             {
                 DateTime date = new DateTime();
                 date = DateTime.Parse(dr["Date_ID"].ToString());
@@ -76,11 +77,26 @@ namespace Bus449Proj
                             pmshift = dz["shift"].ToString();
                         }
                     }
-                    string addam = date.ToString("MM/dd/yyyy") + " " + amlname + " " + amphone + " " + amshift;
-                    string addpm = date.ToString("MM/dd/yyyy") + " " + pmlname + " " + pmphone + " " + pmshift;
+                    //Create a listview to show all products and purchase amounts
+                    string[] fieldsArrayAM = new string[4];
+                    fieldsArrayAM[0] = date.ToString("MM/dd/yyyy");
+                    fieldsArrayAM[1] = amlname;
+                    fieldsArrayAM[2] = amphone;
+                    fieldsArrayAM[3] = amshift;
+                    ListViewItem showsLVI = new ListViewItem(fieldsArrayAM );
+                    datesListView.Items.Add(showsLVI);
 
-                    dateviewListBox.Items.Add(addam);
-                    dateviewListBox.Items.Add(addpm);
+                    string[] fieldsArrayPM = new string[4];
+                    fieldsArrayPM[0] = date.ToString("MM/dd/yyyy");
+                    fieldsArrayPM[1] = pmlname;
+                    fieldsArrayPM[2] = pmphone;
+                    fieldsArrayPM[3] = pmshift;
+                    ListViewItem showsLVI2 = new ListViewItem(fieldsArrayPM);
+                    datesListView.Items.Add(showsLVI2);
+                    //string addam = date.ToString("MM/dd/yyyy") + " " + amlname + " " + amphone + " " + amshift;
+                    //string addpm = date.ToString("MM/dd/yyyy") + " " + pmlname + " " + pmphone + " " + pmshift;
+
+                    
                 }
             }
         }
