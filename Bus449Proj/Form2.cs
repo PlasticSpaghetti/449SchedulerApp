@@ -53,6 +53,7 @@ namespace Bus449Proj
             
             Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter oncall = new Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
             int x =0, y = 0;
+            //populates the array for holiday am and pm employees
             foreach (DataRow dr in bus449_TestDataSet.Employee.Rows)
             {
                 if (dr["shift"].ToString() == "A")

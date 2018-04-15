@@ -13,12 +13,7 @@ namespace Bus449Proj
     public partial class Form8 : Form
     {
 
-        public DateTime change = new DateTime();
 
-        public DateTime getDate()
-        {
-            return change.Date;
-        }
 
 
         public Form8()
@@ -26,21 +21,13 @@ namespace Bus449Proj
             InitializeComponent();
         }
 
-        private void oncall_CalendarBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void mainButton_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.oncall_CalendarBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bus449_TestDataSet);
-
+            this.Hide();
+            var form1 = new MainForm();
+            form1.FormClosed += (s, args) => this.Close();
+            form1.Show();
         }
-
-        private void okButton_Click(object sender, EventArgs e)
-        {
-            change = date_IDDateTimePicker.Value;
-
-        }
-        
-        
     }
    
 }

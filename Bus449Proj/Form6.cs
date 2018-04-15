@@ -170,24 +170,6 @@ namespace Bus449Proj
             la = (int)this.employeeTableAdapter.AMCount();
             lp = (int)this.employeeTableAdapter.PMCount();
 
-          /*  if (shiftComboBox.Text == "A" || checkers == 0)
-            {
-                empam = new int[la+1];
-                checker = "A";
-                //empam[empam.Length - 1] = int.Parse(iDTextBox.Text);
-            }
-            else
-                empam = new int[la];
-
-            if (shiftComboBox.Text == "P" || checkers == 1)
-            {
-                emppm = new int[lp+1];
-                checker = "P";
-                //emppm[emppm.Length - 1] = int.Parse(iDTextBox.Text)
-            }
-            else
-                emppm = new int[lp];
-            */
             //creates usable adapter
             Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter oncall = new Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
 
@@ -195,7 +177,7 @@ namespace Bus449Proj
 
             empam = new int[la];
             emppm = new int[lp];
-
+            //populates am and pm employees
             foreach (DataRow dt in bus449_TestDataSet.Employee.Rows)
             {
                 if (dt["shift"].ToString() == "A")
@@ -276,18 +258,6 @@ namespace Bus449Proj
             la = (int)this.employeeTableAdapter.AMCount();
             lp = (int)this.employeeTableAdapter.PMCount();
 
-            /*if (shiftComboBox.Text == "A" || checkers == 0)
-            {
-                la = la + 1;
-                checker = "A";
-                old = "P";
-            }
-            if (shiftComboBox.Text == "P" || checkers == 1)
-            {
-                lp = lp + 1;
-                checker = "P";
-                old = "A";
-            }*/
 
 
             empam = new int[la];
@@ -297,7 +267,7 @@ namespace Bus449Proj
 
             int holicountx = 0,holicounty =0, x = 0, y = 0;
 
-
+            //populates am and pm employees
             foreach (DataRow dt in bus449_TestDataSet.Employee.Rows)
             {
                 if (dt["shift"].ToString() == "A")

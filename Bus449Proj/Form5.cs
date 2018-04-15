@@ -41,7 +41,7 @@ namespace Bus449Proj
             DateTime date = new DateTime();
             date = switchDateTimePicker.Value;
             string amlname = "", pmlname = "";
-
+            //loads initial first and last names
             foreach (DataRow dr in bus449_TestDataSet.Oncall_Calendar.Rows)
             {
                 DateTime check = new DateTime();
@@ -110,7 +110,7 @@ namespace Bus449Proj
             //creates usable adapter
             Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter oncall = new Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
 
-            
+            //updates the calendar with the switch
             foreach(DataRow dr in bus449_TestDataSet.Oncall_Calendar.Rows)
             {
                 int am = 0, pm = 0;
@@ -137,6 +137,7 @@ namespace Bus449Proj
             string current = l_NameComboBox.Text;
             string tag ="";
             string fname = "";
+            //populates the new name combo box with relevant last names
             foreach (DataRow dr in bus449_TestDataSet.Employee.Rows)
             {
                 if (current == dr["L_Name"].ToString())
@@ -159,7 +160,7 @@ namespace Bus449Proj
             DateTime date = new DateTime();
             date = switchDateTimePicker.Value;
             string amlname = "", pmlname = "";
-
+            //gets the employees who are working the current date selected
             foreach (DataRow dr in bus449_TestDataSet.Oncall_Calendar.Rows)
             {
                 DateTime check = new DateTime();
@@ -202,6 +203,7 @@ namespace Bus449Proj
             fnameLabel2.Text = "";
             string current2 = newlnameComboBox.Text;
             string fname2 = "";
+            //adds the first name for the given last name of the employee
             foreach (DataRow dr in bus449_TestDataSet.Employee.Rows)
             {
                 if (current2 == dr["L_Name"].ToString())
