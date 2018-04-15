@@ -93,8 +93,8 @@ namespace Bus449Proj
 
         private void createButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Have you entered all of the desired holidays", "Holiday Confirmation", MessageBoxButtons.YesNo);
-            if (MessageBoxButtons.YesNo.Equals("Yes"))
+            DialogResult result = MessageBox.Show("Have you entered all of the desired holidays", "Holiday Confirmation", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
                 //creates and sets start and end date variables
                 DateTime startdate = new DateTime();
