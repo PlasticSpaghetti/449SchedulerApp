@@ -65,6 +65,7 @@
             this.deleteButton = new System.Windows.Forms.Button();
             this.addsaveButton = new System.Windows.Forms.Button();
             this.shiftButton = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             f_NameLabel = new System.Windows.Forms.Label();
             l_NameLabel = new System.Windows.Forms.Label();
             emailLabel = new System.Windows.Forms.Label();
@@ -75,12 +76,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingNavigator)).BeginInit();
             this.employeeBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // f_NameLabel
             // 
             f_NameLabel.AutoSize = true;
-            f_NameLabel.Location = new System.Drawing.Point(34, 104);
+            f_NameLabel.Location = new System.Drawing.Point(6, 43);
             f_NameLabel.Name = "f_NameLabel";
             f_NameLabel.Size = new System.Drawing.Size(47, 13);
             f_NameLabel.TabIndex = 5;
@@ -89,7 +91,7 @@
             // l_NameLabel
             // 
             l_NameLabel.AutoSize = true;
-            l_NameLabel.Location = new System.Drawing.Point(34, 149);
+            l_NameLabel.Location = new System.Drawing.Point(6, 68);
             l_NameLabel.Name = "l_NameLabel";
             l_NameLabel.Size = new System.Drawing.Size(47, 13);
             l_NameLabel.TabIndex = 7;
@@ -98,7 +100,7 @@
             // emailLabel
             // 
             emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(34, 189);
+            emailLabel.Location = new System.Drawing.Point(18, 95);
             emailLabel.Name = "emailLabel";
             emailLabel.Size = new System.Drawing.Size(35, 13);
             emailLabel.TabIndex = 9;
@@ -107,7 +109,7 @@
             // phoneLabel
             // 
             phoneLabel.AutoSize = true;
-            phoneLabel.Location = new System.Drawing.Point(36, 232);
+            phoneLabel.Location = new System.Drawing.Point(12, 121);
             phoneLabel.Name = "phoneLabel";
             phoneLabel.Size = new System.Drawing.Size(41, 13);
             phoneLabel.TabIndex = 11;
@@ -116,7 +118,7 @@
             // shiftLabel
             // 
             shiftLabel.AutoSize = true;
-            shiftLabel.Location = new System.Drawing.Point(34, 269);
+            shiftLabel.Location = new System.Drawing.Point(22, 147);
             shiftLabel.Name = "shiftLabel";
             shiftLabel.Size = new System.Drawing.Size(31, 13);
             shiftLabel.TabIndex = 13;
@@ -125,7 +127,7 @@
             // iDLabel
             // 
             iDLabel.AutoSize = true;
-            iDLabel.Location = new System.Drawing.Point(34, 61);
+            iDLabel.Location = new System.Drawing.Point(32, 16);
             iDLabel.Name = "iDLabel";
             iDLabel.Size = new System.Drawing.Size(21, 13);
             iDLabel.TabIndex = 14;
@@ -133,7 +135,7 @@
             // 
             // mainButton
             // 
-            this.mainButton.Location = new System.Drawing.Point(260, 218);
+            this.mainButton.Location = new System.Drawing.Point(269, 151);
             this.mainButton.Name = "mainButton";
             this.mainButton.Size = new System.Drawing.Size(75, 23);
             this.mainButton.TabIndex = 0;
@@ -143,7 +145,7 @@
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(260, 278);
+            this.exitButton.Location = new System.Drawing.Point(269, 180);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 23);
             this.exitButton.TabIndex = 1;
@@ -186,7 +188,7 @@
             this.employeeBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.employeeBindingNavigator.Name = "employeeBindingNavigator";
             this.employeeBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.employeeBindingNavigator.Size = new System.Drawing.Size(381, 25);
+            this.employeeBindingNavigator.Size = new System.Drawing.Size(356, 25);
             this.employeeBindingNavigator.TabIndex = 2;
             this.employeeBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -292,33 +294,33 @@
             // f_NameTextBox
             // 
             this.f_NameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "F_Name", true));
-            this.f_NameTextBox.Location = new System.Drawing.Point(96, 101);
+            this.f_NameTextBox.Location = new System.Drawing.Point(59, 39);
             this.f_NameTextBox.Name = "f_NameTextBox";
-            this.f_NameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.f_NameTextBox.Size = new System.Drawing.Size(186, 20);
             this.f_NameTextBox.TabIndex = 6;
             // 
             // l_NameTextBox
             // 
             this.l_NameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "L_Name", true));
-            this.l_NameTextBox.Location = new System.Drawing.Point(96, 146);
+            this.l_NameTextBox.Location = new System.Drawing.Point(59, 65);
             this.l_NameTextBox.Name = "l_NameTextBox";
-            this.l_NameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.l_NameTextBox.Size = new System.Drawing.Size(186, 20);
             this.l_NameTextBox.TabIndex = 8;
             // 
             // emailTextBox
             // 
             this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "email", true));
-            this.emailTextBox.Location = new System.Drawing.Point(96, 186);
+            this.emailTextBox.Location = new System.Drawing.Point(59, 92);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(100, 20);
+            this.emailTextBox.Size = new System.Drawing.Size(186, 20);
             this.emailTextBox.TabIndex = 10;
             // 
             // phoneTextBox
             // 
             this.phoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "phone", true));
-            this.phoneTextBox.Location = new System.Drawing.Point(96, 229);
+            this.phoneTextBox.Location = new System.Drawing.Point(59, 118);
             this.phoneTextBox.Name = "phoneTextBox";
-            this.phoneTextBox.Size = new System.Drawing.Size(100, 20);
+            this.phoneTextBox.Size = new System.Drawing.Size(186, 20);
             this.phoneTextBox.TabIndex = 12;
             // 
             // shiftComboBox
@@ -328,9 +330,9 @@
             this.shiftComboBox.Items.AddRange(new object[] {
             "A",
             "P"});
-            this.shiftComboBox.Location = new System.Drawing.Point(96, 266);
+            this.shiftComboBox.Location = new System.Drawing.Point(59, 144);
             this.shiftComboBox.Name = "shiftComboBox";
-            this.shiftComboBox.Size = new System.Drawing.Size(100, 21);
+            this.shiftComboBox.Size = new System.Drawing.Size(186, 21);
             this.shiftComboBox.TabIndex = 14;
             this.shiftComboBox.TextChanged += new System.EventHandler(this.shiftComboBox_TextChanged);
             // 
@@ -348,14 +350,14 @@
             // iDTextBox
             // 
             this.iDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "ID", true));
-            this.iDTextBox.Location = new System.Drawing.Point(96, 58);
+            this.iDTextBox.Location = new System.Drawing.Point(59, 13);
             this.iDTextBox.Name = "iDTextBox";
-            this.iDTextBox.Size = new System.Drawing.Size(100, 20);
+            this.iDTextBox.Size = new System.Drawing.Size(186, 20);
             this.iDTextBox.TabIndex = 15;
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(260, 165);
+            this.deleteButton.Location = new System.Drawing.Point(269, 122);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(75, 23);
             this.deleteButton.TabIndex = 16;
@@ -365,9 +367,9 @@
             // 
             // addsaveButton
             // 
-            this.addsaveButton.Location = new System.Drawing.Point(260, 117);
+            this.addsaveButton.Location = new System.Drawing.Point(269, 75);
             this.addsaveButton.Name = "addsaveButton";
-            this.addsaveButton.Size = new System.Drawing.Size(75, 23);
+            this.addsaveButton.Size = new System.Drawing.Size(75, 41);
             this.addsaveButton.TabIndex = 17;
             this.addsaveButton.Text = "Save New Employee";
             this.addsaveButton.UseVisualStyleBackColor = true;
@@ -375,34 +377,44 @@
             // 
             // shiftButton
             // 
-            this.shiftButton.Location = new System.Drawing.Point(260, 71);
+            this.shiftButton.Location = new System.Drawing.Point(269, 28);
             this.shiftButton.Name = "shiftButton";
-            this.shiftButton.Size = new System.Drawing.Size(75, 23);
+            this.shiftButton.Size = new System.Drawing.Size(75, 41);
             this.shiftButton.TabIndex = 18;
             this.shiftButton.Text = "Shift Change";
             this.shiftButton.UseVisualStyleBackColor = true;
             this.shiftButton.Click += new System.EventHandler(this.shiftButton_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.iDTextBox);
+            this.groupBox1.Controls.Add(this.f_NameTextBox);
+            this.groupBox1.Controls.Add(f_NameLabel);
+            this.groupBox1.Controls.Add(this.l_NameTextBox);
+            this.groupBox1.Controls.Add(iDLabel);
+            this.groupBox1.Controls.Add(l_NameLabel);
+            this.groupBox1.Controls.Add(this.emailTextBox);
+            this.groupBox1.Controls.Add(shiftLabel);
+            this.groupBox1.Controls.Add(emailLabel);
+            this.groupBox1.Controls.Add(this.shiftComboBox);
+            this.groupBox1.Controls.Add(this.phoneTextBox);
+            this.groupBox1.Controls.Add(phoneLabel);
+            this.groupBox1.Location = new System.Drawing.Point(12, 28);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(251, 178);
+            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Employee Info";
+            // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 334);
+            this.ClientSize = new System.Drawing.Size(356, 214);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.shiftButton);
             this.Controls.Add(this.addsaveButton);
             this.Controls.Add(this.deleteButton);
-            this.Controls.Add(iDLabel);
-            this.Controls.Add(this.iDTextBox);
-            this.Controls.Add(shiftLabel);
-            this.Controls.Add(this.shiftComboBox);
-            this.Controls.Add(phoneLabel);
-            this.Controls.Add(this.phoneTextBox);
-            this.Controls.Add(emailLabel);
-            this.Controls.Add(this.emailTextBox);
-            this.Controls.Add(l_NameLabel);
-            this.Controls.Add(this.l_NameTextBox);
-            this.Controls.Add(f_NameLabel);
-            this.Controls.Add(this.f_NameTextBox);
             this.Controls.Add(this.employeeBindingNavigator);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.mainButton);
@@ -418,6 +430,8 @@
             this.employeeBindingNavigator.ResumeLayout(false);
             this.employeeBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -454,5 +468,6 @@
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button addsaveButton;
         private System.Windows.Forms.Button shiftButton;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

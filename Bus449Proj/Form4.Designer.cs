@@ -43,13 +43,15 @@
             this.employeeTableAdapter = new Bus449Proj.Bus449_TestDataSetTableAdapters.EmployeeTableAdapter();
             this.oncall_CalendarTableAdapter = new Bus449Proj.Bus449_TestDataSetTableAdapters.Oncall_CalendarTableAdapter();
             this.tableAdapterManager = new Bus449Proj.Bus449_TestDataSetTableAdapters.TableAdapterManager();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.oncallCalendarBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bus449_TestDataSet)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainButton
             // 
-            this.mainButton.Location = new System.Drawing.Point(322, 203);
+            this.mainButton.Location = new System.Drawing.Point(318, 180);
             this.mainButton.Name = "mainButton";
             this.mainButton.Size = new System.Drawing.Size(75, 23);
             this.mainButton.TabIndex = 0;
@@ -59,7 +61,7 @@
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(322, 249);
+            this.exitButton.Location = new System.Drawing.Point(318, 209);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 23);
             this.exitButton.TabIndex = 1;
@@ -70,7 +72,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 20);
+            this.label1.Location = new System.Drawing.Point(6, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 2;
@@ -79,7 +81,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 74);
+            this.label2.Location = new System.Drawing.Point(9, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 3;
@@ -88,17 +90,17 @@
             // dateviewListBox
             // 
             this.dateviewListBox.FormattingEnabled = true;
-            this.dateviewListBox.Location = new System.Drawing.Point(16, 115);
+            this.dateviewListBox.Location = new System.Drawing.Point(12, 85);
             this.dateviewListBox.Name = "dateviewListBox";
-            this.dateviewListBox.Size = new System.Drawing.Size(272, 160);
+            this.dateviewListBox.Size = new System.Drawing.Size(300, 147);
             this.dateviewListBox.TabIndex = 16;
             // 
             // startDateTimePicker
             // 
             this.startDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.oncallCalendarBindingSource, "Date_ID", true));
-            this.startDateTimePicker.Location = new System.Drawing.Point(88, 14);
+            this.startDateTimePicker.Location = new System.Drawing.Point(71, 13);
             this.startDateTimePicker.Name = "startDateTimePicker";
-            this.startDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.startDateTimePicker.Size = new System.Drawing.Size(223, 20);
             this.startDateTimePicker.TabIndex = 17;
             this.startDateTimePicker.Value = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
             this.startDateTimePicker.ValueChanged += new System.EventHandler(this.startDateTimePicker_ValueChanged);
@@ -115,17 +117,17 @@
             // 
             // endDateTimePicker
             // 
-            this.endDateTimePicker.Location = new System.Drawing.Point(88, 68);
+            this.endDateTimePicker.Location = new System.Drawing.Point(71, 39);
             this.endDateTimePicker.Name = "endDateTimePicker";
-            this.endDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.endDateTimePicker.Size = new System.Drawing.Size(223, 20);
             this.endDateTimePicker.TabIndex = 18;
             this.endDateTimePicker.Value = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
             // 
             // viewButton
             // 
-            this.viewButton.Location = new System.Drawing.Point(322, 158);
+            this.viewButton.Location = new System.Drawing.Point(318, 12);
             this.viewButton.Name = "viewButton";
-            this.viewButton.Size = new System.Drawing.Size(75, 23);
+            this.viewButton.Size = new System.Drawing.Size(75, 162);
             this.viewButton.TabIndex = 19;
             this.viewButton.Text = "View";
             this.viewButton.UseVisualStyleBackColor = true;
@@ -146,17 +148,27 @@
             this.tableAdapterManager.Oncall_CalendarTableAdapter = this.oncall_CalendarTableAdapter;
             this.tableAdapterManager.UpdateOrder = Bus449Proj.Bus449_TestDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.startDateTimePicker);
+            this.groupBox1.Controls.Add(this.endDateTimePicker);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(300, 67);
+            this.groupBox1.TabIndex = 20;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Select Date";
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 296);
+            this.ClientSize = new System.Drawing.Size(408, 245);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.viewButton);
-            this.Controls.Add(this.endDateTimePicker);
-            this.Controls.Add(this.startDateTimePicker);
             this.Controls.Add(this.dateviewListBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.mainButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -168,8 +180,9 @@
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.oncallCalendarBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bus449_TestDataSet)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -188,5 +201,6 @@
         private Bus449_TestDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private Bus449_TestDataSet bus449_TestDataSet;
         private System.Windows.Forms.BindingSource oncallCalendarBindingSource;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
