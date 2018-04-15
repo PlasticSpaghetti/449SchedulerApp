@@ -58,6 +58,7 @@
             this.iDLabel1 = new System.Windows.Forms.Label();
             this.f_NameLabel1 = new System.Windows.Forms.Label();
             this.l_NameLabel1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             iDLabel = new System.Windows.Forms.Label();
             f_NameLabel = new System.Windows.Forms.Label();
             l_NameLabel = new System.Windows.Forms.Label();
@@ -65,12 +66,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingNavigator)).BeginInit();
             this.employeeBindingNavigator.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // iDLabel
             // 
             iDLabel.AutoSize = true;
-            iDLabel.Location = new System.Drawing.Point(13, 44);
+            iDLabel.Location = new System.Drawing.Point(34, 21);
             iDLabel.Name = "iDLabel";
             iDLabel.Size = new System.Drawing.Size(21, 13);
             iDLabel.TabIndex = 8;
@@ -79,7 +81,7 @@
             // f_NameLabel
             // 
             f_NameLabel.AutoSize = true;
-            f_NameLabel.Location = new System.Drawing.Point(13, 79);
+            f_NameLabel.Location = new System.Drawing.Point(8, 53);
             f_NameLabel.Name = "f_NameLabel";
             f_NameLabel.Size = new System.Drawing.Size(47, 13);
             f_NameLabel.TabIndex = 9;
@@ -88,7 +90,7 @@
             // l_NameLabel
             // 
             l_NameLabel.AutoSize = true;
-            l_NameLabel.Location = new System.Drawing.Point(13, 107);
+            l_NameLabel.Location = new System.Drawing.Point(8, 87);
             l_NameLabel.Name = "l_NameLabel";
             l_NameLabel.Size = new System.Drawing.Size(47, 13);
             l_NameLabel.TabIndex = 10;
@@ -97,14 +99,14 @@
             // datesListBox
             // 
             this.datesListBox.FormattingEnabled = true;
-            this.datesListBox.Location = new System.Drawing.Point(16, 135);
+            this.datesListBox.Location = new System.Drawing.Point(248, 28);
             this.datesListBox.Name = "datesListBox";
-            this.datesListBox.Size = new System.Drawing.Size(164, 173);
+            this.datesListBox.Size = new System.Drawing.Size(164, 186);
             this.datesListBox.TabIndex = 4;
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(224, 285);
+            this.exitButton.Location = new System.Drawing.Point(418, 191);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(75, 23);
             this.exitButton.TabIndex = 5;
@@ -114,7 +116,7 @@
             // 
             // mainButton
             // 
-            this.mainButton.Location = new System.Drawing.Point(224, 240);
+            this.mainButton.Location = new System.Drawing.Point(418, 162);
             this.mainButton.Name = "mainButton";
             this.mainButton.Size = new System.Drawing.Size(75, 23);
             this.mainButton.TabIndex = 6;
@@ -124,9 +126,9 @@
             // 
             // viewButton
             // 
-            this.viewButton.Location = new System.Drawing.Point(224, 198);
+            this.viewButton.Location = new System.Drawing.Point(418, 28);
             this.viewButton.Name = "viewButton";
-            this.viewButton.Size = new System.Drawing.Size(75, 23);
+            this.viewButton.Size = new System.Drawing.Size(75, 128);
             this.viewButton.TabIndex = 7;
             this.viewButton.Text = "View";
             this.viewButton.UseVisualStyleBackColor = true;
@@ -183,7 +185,7 @@
             this.employeeBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.employeeBindingNavigator.Name = "employeeBindingNavigator";
             this.employeeBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.employeeBindingNavigator.Size = new System.Drawing.Size(326, 25);
+            this.employeeBindingNavigator.Size = new System.Drawing.Size(509, 25);
             this.employeeBindingNavigator.TabIndex = 8;
             this.employeeBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -289,40 +291,53 @@
             // 
             this.iDLabel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.iDLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "ID", true));
-            this.iDLabel1.Location = new System.Drawing.Point(66, 34);
+            this.iDLabel1.Location = new System.Drawing.Point(61, 16);
             this.iDLabel1.Name = "iDLabel1";
-            this.iDLabel1.Size = new System.Drawing.Size(100, 23);
+            this.iDLabel1.Size = new System.Drawing.Size(163, 25);
             this.iDLabel1.TabIndex = 9;
+            this.iDLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // f_NameLabel1
             // 
             this.f_NameLabel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.f_NameLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "F_Name", true));
-            this.f_NameLabel1.Location = new System.Drawing.Point(66, 67);
+            this.f_NameLabel1.Location = new System.Drawing.Point(61, 49);
             this.f_NameLabel1.Name = "f_NameLabel1";
-            this.f_NameLabel1.Size = new System.Drawing.Size(100, 28);
+            this.f_NameLabel1.Size = new System.Drawing.Size(163, 25);
             this.f_NameLabel1.TabIndex = 10;
+            this.f_NameLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // l_NameLabel1
             // 
             this.l_NameLabel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.l_NameLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.employeeBindingSource, "L_Name", true));
-            this.l_NameLabel1.Location = new System.Drawing.Point(66, 107);
+            this.l_NameLabel1.Location = new System.Drawing.Point(61, 82);
             this.l_NameLabel1.Name = "l_NameLabel1";
-            this.l_NameLabel1.Size = new System.Drawing.Size(100, 25);
+            this.l_NameLabel1.Size = new System.Drawing.Size(163, 25);
             this.l_NameLabel1.TabIndex = 11;
+            this.l_NameLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.iDLabel1);
+            this.groupBox1.Controls.Add(l_NameLabel);
+            this.groupBox1.Controls.Add(iDLabel);
+            this.groupBox1.Controls.Add(this.l_NameLabel1);
+            this.groupBox1.Controls.Add(this.f_NameLabel1);
+            this.groupBox1.Controls.Add(f_NameLabel);
+            this.groupBox1.Location = new System.Drawing.Point(12, 28);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(230, 189);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Employee Info";
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(326, 348);
-            this.Controls.Add(l_NameLabel);
-            this.Controls.Add(this.l_NameLabel1);
-            this.Controls.Add(f_NameLabel);
-            this.Controls.Add(this.f_NameLabel1);
-            this.Controls.Add(iDLabel);
-            this.Controls.Add(this.iDLabel1);
+            this.ClientSize = new System.Drawing.Size(509, 228);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.employeeBindingNavigator);
             this.Controls.Add(this.viewButton);
             this.Controls.Add(this.mainButton);
@@ -340,6 +355,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingNavigator)).EndInit();
             this.employeeBindingNavigator.ResumeLayout(false);
             this.employeeBindingNavigator.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -371,5 +388,6 @@
         private System.Windows.Forms.Label iDLabel1;
         private System.Windows.Forms.Label f_NameLabel1;
         private System.Windows.Forms.Label l_NameLabel1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
