@@ -102,7 +102,7 @@
             // shiftLabel
             // 
             shiftLabel.AutoSize = true;
-            shiftLabel.Location = new System.Drawing.Point(26, 126);
+            shiftLabel.Location = new System.Drawing.Point(24, 121);
             shiftLabel.Name = "shiftLabel";
             shiftLabel.Size = new System.Drawing.Size(31, 13);
             shiftLabel.TabIndex = 11;
@@ -355,6 +355,7 @@
             this.shiftLabel1.Name = "shiftLabel1";
             this.shiftLabel1.Size = new System.Drawing.Size(163, 23);
             this.shiftLabel1.TabIndex = 12;
+            this.shiftLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Form3
             // 
